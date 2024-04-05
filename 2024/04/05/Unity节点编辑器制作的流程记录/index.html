@@ -22,7 +22,7 @@
 
   
 
-  <title>算法笔记-二分查找 | 你好 这里是Koo</title>
+  <title>Unity节点编辑器制作的流程记录 | 你好 这里是Koo</title>
 
   
 
@@ -99,11 +99,11 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">算法笔记-二分查找</h1>
+          <h1 class="title-wrap">Unity节点编辑器制作的流程记录</h1>
           <h2 class="title-sub-wrap">
             <strong>Koo</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2024-04-04T17:05:28.000Z" itemprop="datePublished">2024-04-05</time>
+            <time  class="article-date" datetime="2024-04-04T19:42:05.000Z" itemprop="datePublished">2024-04-05</time>
           </h2>
           
           
@@ -112,7 +112,7 @@
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/%E7%AE%97%E6%B3%95/">🏷️ 算法</a></li>
+    <li><a href="/tags/UnityEditor/">🏷️ UnityEditor</a></li>
   
 </ul>
         </div>
@@ -136,45 +136,10 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h1><p>前言：这道题  真的可是说我做了很多遍 就仿佛如英语的abandon 仿佛如恶魔的低语一般伴随着我不会算法的日子。</p>
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><blockquote>
-<p>给定一个 <code>n</code> 个元素有序的（升序）整型数组 <code>nums</code> 和一个目标值 <code>target</code> ，写一个函数搜索 <code>nums</code> 中的 <code>target</code>，如果目标值存在返回下标，否则返回 <code>-1</code>。</p>
-<p><strong>示例 1:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: nums = [-1,0,3,5,9,12], target = 9</span><br><span class="line">输出: 4</span><br><span class="line">解释: 9 出现在 nums 中并且下标为 4</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2:</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: nums = [-1,0,3,5,9,12], target = 2</span><br><span class="line">输出: -1</span><br><span class="line">解释: 2 不存在 nums 中因此返回 -1</span><br></pre></td></tr></table></figure>
-
-
-
-<p><strong>提示：</strong></p>
-<ol>
-<li>你可以假设 <code>nums</code> 中的所有元素是不重复的。</li>
-<li><code>n</code> 将在 <code>[1, 10000]</code>之间。</li>
-<li><code>nums</code> 的每个元素都将在 <code>[-9999, 9999]</code>之间</li>
-</ol>
+        <h1 id="Unity节点编辑器"><a href="#Unity节点编辑器" class="headerlink" title="Unity节点编辑器"></a>Unity节点编辑器</h1><blockquote>
+<p>前言： 狂怒传说 项目中 因为想要做一个泛用的对话树 对话树还要被大行为树包起来？ 好好好  小小NPC必须好好捣鼓一下  这下好了 不得不手搓行为树了</p>
 </blockquote>
-<p>二分又叫分治法 主要要点在于分而治之 </p>
-<p><strong>关键在于分治时候的区间范围取值</strong></p>
-<p>版本一 左闭右闭版本</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">int</span> <span class="title">Search</span>(<span class="params"><span class="built_in">int</span>[] nums, <span class="built_in">int</span> target</span>)</span> </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//定义区间范围为 [left,right] </span></span><br><span class="line">        <span class="built_in">int</span> right = nums.Length <span class="number">-1</span>; </span><br><span class="line">        <span class="built_in">int</span> left = <span class="number">0</span>;   </span><br><span class="line">        <span class="keyword">while</span>(left &lt;= right)&#123; <span class="comment">//因为是闭合区间 才能取到等号</span></span><br><span class="line">            <span class="comment">//这里做减法 防止溢出</span></span><br><span class="line">            <span class="built_in">int</span> middle = left + (-left + right) /<span class="number">2</span>; </span><br><span class="line">            <span class="comment">//目标一定在左边 </span></span><br><span class="line">            <span class="keyword">if</span>(nums[middle] &gt; target) </span><br><span class="line">            &#123; <span class="comment">//范围变成左闭右闭 [left,middle-1]</span></span><br><span class="line">                right = middle <span class="number">-1</span>;</span><br><span class="line">            <span class="comment">//目标在右边</span></span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(nums[middle] &lt; target)&#123;</span><br><span class="line">                <span class="comment">//范围变成 [middle+1,right]</span></span><br><span class="line">                left = middle + <span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> middle;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>版本二 左闭右开</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">int</span> <span class="title">Search</span>(<span class="params"><span class="built_in">int</span>[] nums, <span class="built_in">int</span> target</span>)</span> </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//定义区间范围为 [left,right)</span></span><br><span class="line">        <span class="built_in">int</span> right = nums.Length; </span><br><span class="line">        <span class="built_in">int</span> left = <span class="number">0</span>;   </span><br><span class="line">        <span class="keyword">while</span>(left &lt; right)&#123; <span class="comment">//因为不是闭合区间 不取等号了</span></span><br><span class="line">            <span class="comment">//这里做减法 防止溢出</span></span><br><span class="line">            <span class="comment">//高级写法 &gt;&gt; 运算符是右移位运算符 它将 right - left 的结果右移一位，相当于将其除以2 逆天写法 平常感觉用不太到 学不太来</span></span><br><span class="line">             <span class="built_in">int</span> middle = left + ((right - left) &gt;&gt; <span class="number">1</span>);</span><br><span class="line">            <span class="comment">//目标一定在左边 </span></span><br><span class="line">            <span class="keyword">if</span>(nums[middle] &gt; target) </span><br><span class="line">            &#123; <span class="comment">//不是上版的 middle-1了 范围变成左闭右闭 [left,middle)</span></span><br><span class="line">                right = middle;  </span><br><span class="line">            <span class="comment">//目标在右边</span></span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(nums[middle] &lt; target)&#123;</span><br><span class="line">                <span class="comment">//范围变成 [middle+1,right)</span></span><br><span class="line">                left = middle + <span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> middle;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//无目标值</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="运用分析"><a href="#运用分析" class="headerlink" title="运用分析"></a>运用分析</h1><p>二分查找我认为是学习 循环中判断与开闭区间关系的一道好题目 </p>
-<p>实际项目中没有用到过   </p>
-<p>叭叭两句 <code>&gt;&gt;</code> 这个玩意 GPT告送我 大多数情况 替换 &#x2F;2 是安全的 但真的会有人这样用吗 这样可读性就下降了 可能性能有微小的提升吧 注意的是 右移运算不会出现小数</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> c = <span class="number">-5</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用右移位运算符</span></span><br><span class="line"><span class="built_in">int</span> result1 = c &gt;&gt; <span class="number">1</span>;  <span class="comment">// 结果为 -3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用除法</span></span><br><span class="line"><span class="built_in">int</span> result2 = c / <span class="number">2</span>;   <span class="comment">// 结果为 -2</span></span><br><span class="line"></span><br><span class="line">Console.WriteLine(<span class="string">&quot;结果1: &quot;</span> + result1);  <span class="comment">// 输出-3</span></span><br><span class="line">Console.WriteLine(<span class="string">&quot;结果2: &quot;</span> + result2);  <span class="comment">// 输出-2</span></span><br></pre></td></tr></table></figure>
-
-<p>运行一下 不一样  感觉有点危险 能少用还是少用吧 </p>
-<img src="/2024/04/05/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/image-20240405014738787.png" class="" title="image-20240405014738787">
-
-
-
-<p>我写好多次 每次写二分还是废 所白了 就是记不住 写这篇文章 就是要逼我 强行记住 </p>
+<img src="/2024/04/05/Unity%E8%8A%82%E7%82%B9%E7%BC%96%E8%BE%91%E5%99%A8%E5%88%B6%E4%BD%9C%E7%9A%84%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/image-20240405034841452.png" class="" title="image-20240405034841452">
 
       </section>
 
@@ -187,8 +152,8 @@
     
     <div class="card-text">
       
-        <a href="/2024/04/05/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0-%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">算法笔记-移除元素</h2>
+        <a href="/2024/04/05/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0-%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E5%B9%B3%E6%96%B9/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">算法笔记-有序数组平方</h2>
         </a>
       
       <div class="card-text--row">Newer</div>
@@ -196,6 +161,20 @@
   </article>
 </div>
           
+          
+            <div class="article-nav-item layout-padding">
+  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
+    
+    <div class="card-text">
+      
+        <a href="/2024/04/05/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0-%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">算法笔记-移除元素</h2>
+        </a>
+      
+      <div class="card-text--row">Older</div>
+    </div>
+  </article>
+</div>
           
         </nav>
       
