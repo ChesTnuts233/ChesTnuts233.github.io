@@ -22,7 +22,7 @@
 
   
 
-  <title>Unity节点编辑器制作的流程记录 | 你好 这里是Koo</title>
+  <title>算法笔记-螺旋矩阵 | 你好 这里是Koo</title>
 
   
 
@@ -99,11 +99,11 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">Unity节点编辑器制作的流程记录</h1>
+          <h1 class="title-wrap">算法笔记-螺旋矩阵</h1>
           <h2 class="title-sub-wrap">
             <strong>Koo</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2024-04-04T19:42:05.000Z" itemprop="datePublished">2024-04-05</time>
+            <time  class="article-date" datetime="2024-04-05T18:53:19.000Z" itemprop="datePublished">2024-04-06</time>
           </h2>
           
           
@@ -112,7 +112,7 @@
 </ul>
           <ul class="wrap-list dark">
   
-    <li><a href="/tags/UnityEditor/">🏷️ UnityEditor</a></li>
+    <li><a href="/tags/%E7%AE%97%E6%B3%95/">🏷️ 算法</a></li>
   
 </ul>
         </div>
@@ -136,10 +136,33 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="Unity节点编辑器"><a href="#Unity节点编辑器" class="headerlink" title="Unity节点编辑器"></a>Unity节点编辑器</h1><blockquote>
-<p>前言： 狂怒传说 项目中 因为想要做一个泛用的对话树 对话树还要被大行为树包起来？ 好好好  小小NPC必须好好捣鼓一下  这下好了 不得不手搓行为树了</p>
+        <h1 id="螺旋矩阵"><a href="#螺旋矩阵" class="headerlink" title="螺旋矩阵"></a>螺旋矩阵</h1><blockquote>
+<p>前言 ： 果然这题目又告诉我，你的逻辑推理能力太差了，我自己写的时候，转圈真给自己转进去了，哎。</p>
 </blockquote>
-<img src="/2024/04/05/Unity%E8%8A%82%E7%82%B9%E7%BC%96%E8%BE%91%E5%99%A8%E5%88%B6%E4%BD%9C%E7%9A%84%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/image-20240405034841452.png" class="" title="image-20240405034841452">
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><blockquote>
+<p>给你一个正整数 <code>n</code> ，生成一个包含 <code>1</code> 到 <code>n2</code> 所有元素，且元素按顺时针顺序螺旋排列的 <code>n x n</code> 正方形矩阵 <code>matrix</code> 。</p>
+<p><strong>示例 1：</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2020/11/13/spiraln.jpg" alt="img"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 3</span><br><span class="line">输出：[[1,2,3],[8,9,4],[7,6,5]]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 1</span><br><span class="line">输出：[[1]]</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 20</code></li>
+</ul>
+</blockquote>
+<p>这题主要在于模拟过程，知道应该要左闭右开 每个节点末尾留给下一次循环遍历来处理就好。然后难点就在要注意每转一圈之后 都有一个+1的偏移量 和 奇偶数 最后的处理了</p>
+<img src="/2024/04/06/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0-%E8%9E%BA%E6%97%8B%E7%9F%A9%E9%98%B5/image-20240406030020682.png" class="" title="image-20240406030020682">
+
+<p>这里画一个偶数的情况</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">int</span>[][] GenerateMatrix(<span class="built_in">int</span> n) &#123;</span><br><span class="line">        <span class="comment">//生成从1 到 n2的数组</span></span><br><span class="line">        <span class="built_in">int</span> n2 = n * n;</span><br><span class="line">        <span class="built_in">int</span>[][] result = <span class="keyword">new</span> <span class="built_in">int</span>[n][];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> a= <span class="number">0</span>;a&lt;n;a++)&#123;</span><br><span class="line">            result[a] = <span class="keyword">new</span> <span class="built_in">int</span>[n];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">int</span> startx = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">int</span> starty = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">int</span> offset = <span class="number">1</span>;</span><br><span class="line">        <span class="built_in">int</span> count = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//这个螺旋矩阵是n*n的 第一圈是[0,n)</span></span><br><span class="line">        <span class="built_in">int</span> loop = n/<span class="number">2</span>;</span><br><span class="line">        <span class="built_in">int</span> mid = n/<span class="number">2</span>;</span><br><span class="line">        <span class="built_in">int</span> i,j;</span><br><span class="line">        <span class="keyword">while</span>(loop &gt; <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            j = startx;</span><br><span class="line">            i = starty;</span><br><span class="line">            <span class="comment">// 第一条边左闭右开填充</span></span><br><span class="line">            <span class="keyword">for</span>(i =starty;i&lt; n-offset;i++)&#123;</span><br><span class="line">                result[startx][i] = count++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 第二条边</span></span><br><span class="line">            <span class="keyword">for</span>(j= startx;j &lt; n- offset;j++)&#123;</span><br><span class="line">                result[j][i] = count++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//第三条边</span></span><br><span class="line">            <span class="keyword">for</span>(;i&gt;starty;i--)&#123;</span><br><span class="line">                result[j][i] = count++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//第四条边</span></span><br><span class="line">            <span class="keyword">for</span>(;j&gt;startx;j--)&#123;</span><br><span class="line">                result[j][i] = count++;</span><br><span class="line">            &#125;</span><br><span class="line">            startx++;</span><br><span class="line">            starty++;</span><br><span class="line">            offset++;</span><br><span class="line">            loop--;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//最后处理奇数</span></span><br><span class="line">        <span class="keyword">if</span> (n % <span class="number">2</span> == <span class="number">1</span>) &#123;</span><br><span class="line">            result[mid][mid] = count;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>总结一下</p>
+<p>这种模拟过程 对于一些 在游戏逻辑中 就比如转圈圈放东西 这种逻辑来说还是非常有必要的。 实际情况可能就是一个List 然后要在一个二维数组里 比如地图网格 螺旋放物品。 这种情况 也许 可能会出现。 如果出现 那我就愉快的用这个来写了。</p>
 
       </section>
 
@@ -147,28 +170,14 @@
       
         <nav class="article-nav">
           
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-    <div class="card-text">
-      
-        <a href="/2024/04/05/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0-%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E5%B9%B3%E6%96%B9/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">算法笔记-有序数组平方</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
     <div class="card-text">
       
-        <a href="/2024/04/05/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0-%E7%A7%BB%E9%99%A4%E5%85%83%E7%B4%A0/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">算法笔记-移除元素</h2>
+        <a href="/2024/04/05/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0-%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">算法笔记-长度最小的子数组</h2>
         </a>
       
       <div class="card-text--row">Older</div>
