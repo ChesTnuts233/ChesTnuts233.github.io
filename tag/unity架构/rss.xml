@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>你好 这里是Koo • Posts by &#34;unity架构&#34; tag</title>
+        <link>http://example.com</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Sat, 06 Apr 2024 04:39:41 +0800</pubDate>
+        <lastBuildDate>Sat, 06 Apr 2024 04:39:41 +0800</lastBuildDate>
+        <category>UnityEditor</category>
+        <category>算法</category>
+        <category>Unity架构</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/04/06/%E5%85%B3%E4%BA%8EKooFrame%E7%9A%84%E5%9F%BA%E7%A1%80-%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8%E7%9A%84%E6%83%B3%E6%B3%95%E6%9E%84%E5%BB%BA/</guid>
+            <title>KooFrame-代码生成器</title>
+            <link>http://example.com/2024/04/06/%E5%85%B3%E4%BA%8EKooFrame%E7%9A%84%E5%9F%BA%E7%A1%80-%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8%E7%9A%84%E6%83%B3%E6%B3%95%E6%9E%84%E5%BB%BA/</link>
+            <category>Unity架构</category>
+            <pubDate>Sat, 06 Apr 2024 04:39:41 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;关于kooframe的基础-代码生成器的想法构建&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#关于kooframe的基础-代码生成器的想法构建&#34;&gt;#&lt;/a&gt; 关于 KooFrame 的基础 - 代码生成器的想法构建&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;前言：我一直在思考自己的毕设在做什么，一个简简单单的游戏？ 一款完全可能根本就没有人会能玩到的残次品？。在有限的时间 用 Unity 做一段美术流程的动画来展示自己技术美术相关的能力？ 但以我目前的技术面来说，我打算就 Editor 方面出发，编写一套适合引导学生学习的 Unity 架构&lt;/p&gt;
+&lt;/blockquote&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

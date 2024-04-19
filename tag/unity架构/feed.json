@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "你好 这里是Koo • All posts by \"unity架构\" tag",
+    "description": "",
+    "home_page_url": "http://example.com",
+    "items": [
+        {
+            "id": "http://example.com/2024/04/06/%E5%85%B3%E4%BA%8EKooFrame%E7%9A%84%E5%9F%BA%E7%A1%80-%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8%E7%9A%84%E6%83%B3%E6%B3%95%E6%9E%84%E5%BB%BA/",
+            "url": "http://example.com/2024/04/06/%E5%85%B3%E4%BA%8EKooFrame%E7%9A%84%E5%9F%BA%E7%A1%80-%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8%E7%9A%84%E6%83%B3%E6%B3%95%E6%9E%84%E5%BB%BA/",
+            "title": "KooFrame-代码生成器",
+            "date_published": "2024-04-05T20:39:41.000Z",
+            "content_html": "<h1 id=\"关于kooframe的基础-代码生成器的想法构建\"><a class=\"markdownIt-Anchor\" href=\"#关于kooframe的基础-代码生成器的想法构建\">#</a> 关于 KooFrame 的基础 - 代码生成器的想法构建</h1>\n<blockquote>\n<p>前言：我一直在思考自己的毕设在做什么，一个简简单单的游戏？ 一款完全可能根本就没有人会能玩到的残次品？。在有限的时间 用 Unity 做一段美术流程的动画来展示自己技术美术相关的能力？ 但以我目前的技术面来说，我打算就 Editor 方面出发，编写一套适合引导学生学习的 Unity 架构</p>\n</blockquote>\n",
+            "tags": [
+                "Unity架构"
+            ]
+        }
+    ]
+}

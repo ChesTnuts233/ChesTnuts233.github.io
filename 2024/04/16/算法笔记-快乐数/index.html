@@ -9,15 +9,16 @@
 
 
 
-    <meta name="description" content="随谈： 这题难点在于 判断数是否重复 和如何反复判断 
+    <meta name="description" content="随谈： 这题难点在于 判断数是否重复 和如何反复判断
 
-题目
-编写一个算法来判断一个数 n 是不是快乐数。
+# 题目
+
+编写一个算法来判断一个数  n  是不是快乐数。
 「快乐数」 定义为：
 
 对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和。
 然后重复这个过程直到这个数变为 1，也可能是 无限循环 但始终变不到 1。
-如果这个过程 结果为 1，"/>
+如果这个过程 结果"/>
 
 
 <!--Author-->
@@ -32,15 +33,16 @@
 
 <!--Open Graph Description-->
 
-    <meta property="og:description" content="随谈： 这题难点在于 判断数是否重复 和如何反复判断 
+    <meta property="og:description" content="随谈： 这题难点在于 判断数是否重复 和如何反复判断
 
-题目
-编写一个算法来判断一个数 n 是不是快乐数。
+# 题目
+
+编写一个算法来判断一个数  n  是不是快乐数。
 「快乐数」 定义为：
 
 对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和。
 然后重复这个过程直到这个数变为 1，也可能是 无限循环 但始终变不到 1。
-如果这个过程 结果为 1，"/>
+如果这个过程 结果"/>
 
 
 <!--Open Graph Site Name-->
@@ -105,7 +107,7 @@
     
 
 
-<meta name="generator" content="Hexo 7.1.1"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 <!-- Head tag -->
 
 <body>
@@ -173,31 +175,30 @@
 </span>  
                 
                 <blockquote>
-<p>随谈： 这题难点在于 判断数是否重复 和如何反复判断 </p>
+<p>随谈： 这题难点在于 判断数是否重复 和如何反复判断</p>
 </blockquote>
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><blockquote>
-<p>编写一个算法来判断一个数 <code>n</code> 是不是快乐数。</p>
+<h3 id="题目"><a class="markdownIt-Anchor" href="#题目">#</a> 题目</h3>
+<blockquote>
+<p>编写一个算法来判断一个数  <code>n</code>  是不是快乐数。</p>
 <p><strong>「快乐数」</strong> 定义为：</p>
 <ul>
 <li>对于一个正整数，每一次将该数替换为它每个位置上的数字的平方和。</li>
 <li>然后重复这个过程直到这个数变为 1，也可能是 <strong>无限循环</strong> 但始终变不到 1。</li>
 <li>如果这个过程 <strong>结果为</strong> 1，那么这个数就是快乐数。</li>
 </ul>
-<p>如果 <code>n</code> 是 <em>快乐数</em> 就返回 <code>true</code> ；不是，则返回 <code>false</code> 。</p>
+<p>如果  <code>n</code>  是 <em>快乐数</em> 就返回  <code>true</code>  ；不是，则返回  <code>false</code>  。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 19</span><br><span class="line">输出：true</span><br><span class="line">解释：</span><br><span class="line">12 + 92 = 82</span><br><span class="line">82 + 22 = 68</span><br><span class="line">62 + 82 = 100</span><br><span class="line">12 + 02 + 02 = 1</span><br></pre></td></tr></table></figure>
-
 <p><strong>示例 2：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 2</span><br><span class="line">输出：false</span><br></pre></td></tr></table></figure>
-
 <p><strong>提示：</strong></p>
 <ul>
 <li><code>1 &lt;= n &lt;= 231 - 1</code></li>
 </ul>
 </blockquote>
-<p>这题我出问题的地方 简单一句话就是 忘记把n在循环中再设置成numSum了</p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">bool</span> <span class="title">IsHappy</span>(<span class="params"><span class="built_in">int</span> n</span>)</span> &#123;</span><br><span class="line">        <span class="comment">//求和的数进字典</span></span><br><span class="line">        Dictionary&lt;<span class="built_in">int</span>,<span class="built_in">int</span>&gt; SumDic = <span class="keyword">new</span>(); </span><br><span class="line">        <span class="comment">//拆分当前数 先得到当前数字的位数 可以ToString后 根据字符串来拆</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">int</span> numDigit = <span class="number">0</span>;</span><br><span class="line">            <span class="built_in">int</span> numSum = <span class="number">0</span>;    </span><br><span class="line">            <span class="built_in">char</span>[] numChars =  n.ToString().ToCharArray();</span><br><span class="line">            numDigit = numChars.Length;</span><br><span class="line">            <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;numDigit;i++)&#123;</span><br><span class="line">                numSum += <span class="built_in">int</span>.Parse(numChars[i].ToString()) * <span class="built_in">int</span>.Parse(numChars[i].ToString());</span><br><span class="line">            &#125;</span><br><span class="line">                <span class="comment">//加进字典中 </span></span><br><span class="line">            <span class="keyword">if</span>(SumDic.TryAdd(numSum,<span class="number">0</span>))&#123;</span><br><span class="line">                <span class="comment">//能加进字典 说明不重复 判断一下Sum是否是1</span></span><br><span class="line">                <span class="keyword">if</span>(numSum==<span class="number">1</span>)&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">//更新一下n的值啊 不然循环每次都一样？</span></span><br><span class="line">                n = numSum;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="comment">//不能加进字典 重复 </span></span><br><span class="line">                <span class="keyword">if</span>(numSum == <span class="number">1</span>)&#123; <span class="comment">//快乐数</span></span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<p>这题我出问题的地方 简单一句话就是 忘记把 n 在循环中再设置成 numSum 了</p>
+<h2 id="题解"><a class="markdownIt-Anchor" href="#题解">#</a> 题解</h2>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">bool</span> <span class="title">IsHappy</span>(<span class="params"><span class="built_in">int</span> n</span>)</span> &#123;</span><br><span class="line">        <span class="comment">//求和的数进字典</span></span><br><span class="line">        Dictionary&lt;<span class="built_in">int</span>,<span class="built_in">int</span>&gt; SumDic = <span class="keyword">new</span>(); </span><br><span class="line">        <span class="comment">//拆分当前数 先得到当前数字的位数 可以ToString后 根据字符串来拆</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>) </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">int</span> numDigit = <span class="number">0</span>;</span><br><span class="line">            <span class="built_in">int</span> numSum = <span class="number">0</span>;    </span><br><span class="line">            <span class="built_in">char</span>[] numChars =  n.ToString().ToCharArray();</span><br><span class="line">            numDigit = numChars.Length;</span><br><span class="line">            <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;numDigit;i++)&#123;</span><br><span class="line">                numSum += <span class="built_in">int</span>.Parse(numChars[i].ToString()) * <span class="built_in">int</span>.Parse(numChars[i].ToString());</span><br><span class="line">            &#125;</span><br><span class="line">                <span class="comment">//加进字典中 </span></span><br><span class="line">            <span class="keyword">if</span>(SumDic.TryAdd(numSum,<span class="number">0</span>))&#123;</span><br><span class="line">                <span class="comment">//能加进字典 说明不重复 判断一下Sum是否是1</span></span><br><span class="line">                <span class="keyword">if</span>(numSum==<span class="number">1</span>)&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="comment">//更新一下n的值啊 不然循环每次都一样？</span></span><br><span class="line">                n = numSum;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="comment">//不能加进字典 重复 </span></span><br><span class="line">                <span class="keyword">if</span>(numSum == <span class="number">1</span>)&#123; <span class="comment">//快乐数</span></span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
             </div>
 

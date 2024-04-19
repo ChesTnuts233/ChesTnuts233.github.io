@@ -9,12 +9,13 @@
 
 
 
-    <meta name="description" content="移除元素
-前言： 简单题暴打我 3年后归来还是被直接KO 我还真是算法白痴 有人愿意花3小时学算法 但我宁愿花三小时玩博客 真是丢西瓜。。。
+    <meta name="description" content="# 移除元素
 
-题目：
-给你一个数组 nums 和一个值 val，你需要 原地 移除所有数值等于 val 的元素，并返回移除后数组的新长度。
-不要使用额外的数组空间，你必须"/>
+前言： 简单题暴打我 3 年后归来还是被直接 KO 我还真是算法白痴 有人愿意花 3 小时学算法 但我宁愿花三小时玩博客 真是丢西瓜。。。
+
+# 题目：
+
+给你一个数组  nums  和一个值  val ，你需要 原地 移除所有数值等于  val  的元素，并返回移除后数组的新长度。"/>
 
 
 <!--Author-->
@@ -29,12 +30,13 @@
 
 <!--Open Graph Description-->
 
-    <meta property="og:description" content="移除元素
-前言： 简单题暴打我 3年后归来还是被直接KO 我还真是算法白痴 有人愿意花3小时学算法 但我宁愿花三小时玩博客 真是丢西瓜。。。
+    <meta property="og:description" content="# 移除元素
 
-题目：
-给你一个数组 nums 和一个值 val，你需要 原地 移除所有数值等于 val 的元素，并返回移除后数组的新长度。
-不要使用额外的数组空间，你必须"/>
+前言： 简单题暴打我 3 年后归来还是被直接 KO 我还真是算法白痴 有人愿意花 3 小时学算法 但我宁愿花三小时玩博客 真是丢西瓜。。。
+
+# 题目：
+
+给你一个数组  nums  和一个值  val ，你需要 原地 移除所有数值等于  val  的元素，并返回移除后数组的新长度。"/>
 
 
 <!--Open Graph Site Name-->
@@ -99,7 +101,7 @@
     
 
 
-<meta name="generator" content="Hexo 7.1.1"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 <!-- Head tag -->
 
 <body>
@@ -166,25 +168,24 @@
     
 </span>  
                 
-                <h1 id="移除元素"><a href="#移除元素" class="headerlink" title="移除元素"></a>移除元素</h1><blockquote>
-<p>前言： 简单题暴打我 3年后归来还是被直接KO 我还真是算法白痴 有人愿意花3小时学算法 但我宁愿花三小时玩博客 真是丢西瓜。。。</p>
+                <h1 id="移除元素"><a class="markdownIt-Anchor" href="#移除元素">#</a> 移除元素</h1>
+<blockquote>
+<p>前言： 简单题暴打我 3 年后归来还是被直接 KO 我还真是算法白痴 有人愿意花 3 小时学算法 但我宁愿花三小时玩博客 真是丢西瓜。。。</p>
 </blockquote>
-<h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><blockquote>
-<p>给你一个数组 <code>nums</code> 和一个值 <code>val</code>，你需要 <strong><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95">原地</a></strong> 移除所有数值等于 <code>val</code> 的元素，并返回移除后数组的新长度。</p>
-<p>不要使用额外的数组空间，你必须仅使用 <code>O(1)</code> 额外空间并 <strong><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95">原地 </a>修改输入数组</strong>。</p>
+<h3 id="题目"><a class="markdownIt-Anchor" href="#题目">#</a> 题目：</h3>
+<blockquote>
+<p>给你一个数组  <code>nums</code>  和一个值  <code>val</code> ，你需要 <strong><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95">原地</a></strong> 移除所有数值等于  <code>val</code>  的元素，并返回移除后数组的新长度。</p>
+<p>不要使用额外的数组空间，你必须仅使用  <code>O(1)</code>  额外空间并 <strong><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95">原地 </a>修改输入数组</strong>。</p>
 <p>元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。</p>
 <p><strong>说明:</strong></p>
-<p>为什么返回数值是整数，但输出的答案是数组呢?</p>
-<p>请注意，输入数组是以<strong>「引用」</strong>方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。</p>
+<p>为什么返回数值是整数，但输出的答案是数组呢？</p>
+<p>请注意，输入数组是以 **「引用」** 方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。</p>
 <p>你可以想象内部操作如下:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// nums 是以“引用”方式传递的。也就是说，不对实参作任何拷贝</span><br><span class="line">int len = removeElement(nums, val);</span><br><span class="line"></span><br><span class="line">// 在函数里修改输入数组对于调用者是可见的。</span><br><span class="line">// 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。</span><br><span class="line">for (int i = 0; i &lt; len; i++) &#123;</span><br><span class="line">    print(nums[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p><strong>示例 1：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [3,2,2,3], val = 3</span><br><span class="line">输出：2, nums = [2,2]</span><br><span class="line">解释：函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。你不需要考虑数组中超出新长度后面的元素。例如，函数返回的新长度为 2 ，而 nums = [2,2,3,3] 或 nums = [2,2,0,0]，也会被视作正确答案。</span><br></pre></td></tr></table></figure>
-
 <p><strong>示例 2：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [0,1,2,2,3,0,4,2], val = 2</span><br><span class="line">输出：5, nums = [0,1,3,0,4]</span><br><span class="line">解释：函数应该返回新的长度 5, 并且 nums 中的前五个元素为 0, 1, 3, 0, 4。注意这五个元素可为任意顺序。你不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
-
 <p><strong>提示：</strong></p>
 <ul>
 <li><code>0 &lt;= nums.length &lt;= 100</code></li>
@@ -192,17 +193,19 @@
 <li><code>0 &lt;= val &lt;= 100</code></li>
 </ul>
 </blockquote>
-<h3 id="题解过程"><a href="#题解过程" class="headerlink" title="题解过程"></a>题解过程</h3><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">int</span> <span class="title">RemoveElement</span>(<span class="params"><span class="built_in">int</span>[] nums, <span class="built_in">int</span> val</span>)</span> &#123;</span><br><span class="line">        <span class="comment">//这是两次遍历的暴力解法 </span></span><br><span class="line">        <span class="comment">// int size = nums.Length;</span></span><br><span class="line">        <span class="comment">// for(int i = 0;i&lt;size;i++)&#123;</span></span><br><span class="line">        <span class="comment">//     if(nums[i] == val)&#123;</span></span><br><span class="line">        <span class="comment">//         //后面都往前移动</span></span><br><span class="line">        <span class="comment">//         for(int j = i+1;j&lt;size;j++)&#123;</span></span><br><span class="line">        <span class="comment">//             nums[j-1] = nums[j];</span></span><br><span class="line">        <span class="comment">//         &#125;</span></span><br><span class="line">        <span class="comment">//         i--;  //我失败就失败在又漏了i-- 数组变化了 你i不变化？ </span></span><br><span class="line">        <span class="comment">//         size--; </span></span><br><span class="line">        <span class="comment">//     &#125;</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// return size;</span></span><br><span class="line">       </span><br><span class="line">        <span class="comment">//快慢指针法 这里是答案写法 我写的烂透了 这里写的真精简啊..</span></span><br><span class="line">        <span class="built_in">int</span> slowPoint = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> fastPoint=<span class="number">0</span>;fastPoint&lt;nums.Length;fastPoint++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[fastPoint] != val)&#123;</span><br><span class="line">                nums[slowPoint++] = nums[fastPoint];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> slowPoint;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h2><p>简单的说 就是 数组是不能删掉的  数组内的元素都是覆盖的 大概内部有个计数器用来标记长度 加加减减</p>
-<h3 id="快慢指针法"><a href="#快慢指针法" class="headerlink" title="快慢指针法"></a>快慢指针法</h3><blockquote>
+<h3 id="题解过程"><a class="markdownIt-Anchor" href="#题解过程">#</a> 题解过程</h3>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">int</span> <span class="title">RemoveElement</span>(<span class="params"><span class="built_in">int</span>[] nums, <span class="built_in">int</span> val</span>)</span> &#123;</span><br><span class="line">        <span class="comment">//这是两次遍历的暴力解法 </span></span><br><span class="line">        <span class="comment">// int size = nums.Length;</span></span><br><span class="line">        <span class="comment">// for(int i = 0;i&lt;size;i++)&#123;</span></span><br><span class="line">        <span class="comment">//     if(nums[i] == val)&#123;</span></span><br><span class="line">        <span class="comment">//         //后面都往前移动</span></span><br><span class="line">        <span class="comment">//         for(int j = i+1;j&lt;size;j++)&#123;</span></span><br><span class="line">        <span class="comment">//             nums[j-1] = nums[j];</span></span><br><span class="line">        <span class="comment">//         &#125;</span></span><br><span class="line">        <span class="comment">//         i--;  //我失败就失败在又漏了i-- 数组变化了 你i不变化？ </span></span><br><span class="line">        <span class="comment">//         size--; </span></span><br><span class="line">        <span class="comment">//     &#125;</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// return size;</span></span><br><span class="line">       </span><br><span class="line">        <span class="comment">//快慢指针法 这里是答案写法 我写的烂透了 这里写的真精简啊..</span></span><br><span class="line">        <span class="built_in">int</span> slowPoint = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> fastPoint=<span class="number">0</span>;fastPoint&lt;nums.Length;fastPoint++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[fastPoint] != val)&#123;</span><br><span class="line">                nums[slowPoint++] = nums[fastPoint];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> slowPoint;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="解析"><a class="markdownIt-Anchor" href="#解析">#</a> 解析</h2>
+<p>简单的说 就是 数组是不能删掉的  数组内的元素都是覆盖的 大概内部有个计数器用来标记长度 加加减减</p>
+<h3 id="快慢指针法"><a class="markdownIt-Anchor" href="#快慢指针法">#</a> 快慢指针法</h3>
+<blockquote>
 <p>快慢指针通常用来解决这些问题：</p>
 <ol>
 <li>判断链表是否有环：快指针以比慢指针更快的速度遍历链表，如果链表中有环，快指针最终会追上慢指针，从而发现环的存在。</li>
 <li>寻找链表的中间节点：慢指针每次移动一步，快指针每次移动两步，当快指针到达链表末尾时，慢指针指向的节点即为中间节点。</li>
 </ol>
 </blockquote>
-<p>也许能在实践中用到？  但<code>LinkList</code>这种结构都使用极少……</p>
+<p>也许能在实践中用到？  但 <code>LinkList</code>  这种结构都使用极少……</p>
 
             </div>
 

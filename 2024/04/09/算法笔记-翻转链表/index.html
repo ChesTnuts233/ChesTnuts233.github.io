@@ -9,11 +9,13 @@
 
 
 
-    <meta name="description" content="翻转链表
-前言: 这题算是简单 双指针就能解决 这题倒是让我想起今天写节点编辑器的问题 策划要一个废话节点 废话说完回到废话头 一个树里还有好几个头 ，没办法 节点直接的连接不是双向的 也就是只有上一个节点持有下一个节点 我只能让每个废话节点都要有根节点的引用……
+    <meta name="description" content="# 翻转链表
 
-题目
-给你单链表的头节点 hea"/>
+前言：这题算是简单 双指针就能解决 这题倒是让我想起今天写节点编辑器的问题 策划要一个废话节点 废话说完回到废话头 一个树里还有好几个头 ，没办法 节点直接的连接不是双向的 也就是只有上一个节点持有下一个节点 我只能让每个废话节点都要有根节点的引用……
+
+# 题目
+
+给你单链表的头节"/>
 
 
 <!--Author-->
@@ -28,11 +30,13 @@
 
 <!--Open Graph Description-->
 
-    <meta property="og:description" content="翻转链表
-前言: 这题算是简单 双指针就能解决 这题倒是让我想起今天写节点编辑器的问题 策划要一个废话节点 废话说完回到废话头 一个树里还有好几个头 ，没办法 节点直接的连接不是双向的 也就是只有上一个节点持有下一个节点 我只能让每个废话节点都要有根节点的引用……
+    <meta property="og:description" content="# 翻转链表
 
-题目
-给你单链表的头节点 hea"/>
+前言：这题算是简单 双指针就能解决 这题倒是让我想起今天写节点编辑器的问题 策划要一个废话节点 废话说完回到废话头 一个树里还有好几个头 ，没办法 节点直接的连接不是双向的 也就是只有上一个节点持有下一个节点 我只能让每个废话节点都要有根节点的引用……
+
+# 题目
+
+给你单链表的头节"/>
 
 
 <!--Open Graph Site Name-->
@@ -97,7 +101,7 @@
     
 
 
-<meta name="generator" content="Hexo 7.1.1"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 <!-- Head tag -->
 
 <body>
@@ -164,34 +168,31 @@
     
 </span>  
                 
-                <h1 id="翻转链表"><a href="#翻转链表" class="headerlink" title="翻转链表"></a>翻转链表</h1><blockquote>
-<p>前言: 这题算是简单 双指针就能解决 这题倒是让我想起今天写节点编辑器的问题 策划要一个废话节点 废话说完回到废话头 一个树里还有好几个头 ，没办法 节点直接的连接不是双向的 也就是只有上一个节点持有下一个节点 我只能让每个废话节点都要有根节点的引用……</p>
+                <h1 id="翻转链表"><a class="markdownIt-Anchor" href="#翻转链表">#</a> 翻转链表</h1>
+<blockquote>
+<p>前言：这题算是简单 双指针就能解决 这题倒是让我想起今天写节点编辑器的问题 策划要一个废话节点 废话说完回到废话头 一个树里还有好几个头 ，没办法 节点直接的连接不是双向的 也就是只有上一个节点持有下一个节点 我只能让每个废话节点都要有根节点的引用……</p>
 </blockquote>
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><blockquote>
-<p>给你单链表的头节点 <code>head</code> ，请你反转链表，并返回反转后的链表。</p>
+<h3 id="题目"><a class="markdownIt-Anchor" href="#题目">#</a> 题目</h3>
+<blockquote>
+<p>给你单链表的头节点  <code>head</code>  ，请你反转链表，并返回反转后的链表。</p>
 <p><strong>示例 1：</strong></p>
 <p><div class="img-item" data-src="https://assets.leetcode.com/uploads/2021/02/19/rev1ex1.jpg" data-sub-html=".caption"><img src="https://assets.leetcode.com/uploads/2021/02/19/rev1ex1.jpg" alt="img"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">img</span></div></div></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [1,2,3,4,5]</span><br><span class="line">输出：[5,4,3,2,1]</span><br></pre></td></tr></table></figure>
-
 <p><strong>示例 2：</strong></p>
 <p><div class="img-item" data-src="https://assets.leetcode.com/uploads/2021/02/19/rev1ex2.jpg" data-sub-html=".caption"><img src="https://assets.leetcode.com/uploads/2021/02/19/rev1ex2.jpg" alt="img"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">img</span></div></div></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [1,2]</span><br><span class="line">输出：[2,1]</span><br></pre></td></tr></table></figure>
-
 <p><strong>示例 3：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：head = []</span><br><span class="line">输出：[]</span><br></pre></td></tr></table></figure>
-
 <p><strong>提示：</strong></p>
 <ul>
-<li>链表中节点的数目范围是 <code>[0, 5000]</code></li>
+<li>链表中节点的数目范围是  <code>[0, 5000]</code></li>
 <li><code>-5000 &lt;= Node.val &lt;= 5000</code></li>
 </ul>
-<p><strong>进阶：</strong>链表可以选用迭代或递归方式完成反转。你能否用两种方法解决这道题？</p>
+<p>** 进阶：** 链表可以选用迭代或递归方式完成反转。你能否用两种方法解决这道题？</p>
 </blockquote>
-<p>? 还要递归 递归又容易爆栈又容易错  去tm的 递归都给爷爬  不写递归！（好好好 晚点写 晚点写）</p>
-<h2 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     public int val;</span></span><br><span class="line"><span class="comment"> *     public ListNode next;</span></span><br><span class="line"><span class="comment"> *     public ListNode(int val=0, ListNode next=null) &#123;</span></span><br><span class="line"><span class="comment"> *         this.val = val;</span></span><br><span class="line"><span class="comment"> *         this.next = next;</span></span><br><span class="line"><span class="comment"> *     &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">ReverseList</span>(<span class="params">ListNode head</span>)</span> &#123;</span><br><span class="line">        ListNode pre = <span class="literal">null</span>;</span><br><span class="line">        ListNode cur = head;</span><br><span class="line">        ListNode temp = <span class="keyword">new</span>();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// //只有一个头结点 这里考虑错了 应为链表可能为空</span></span><br><span class="line">        <span class="comment">// if(cur.next == null) &#123;</span></span><br><span class="line">        <span class="comment">//     return head;</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(cur != <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="comment">//需要保存一个temp 记录cur.next</span></span><br><span class="line">            temp = cur.next;</span><br><span class="line">            cur.next = pre;</span><br><span class="line">            pre = cur;</span><br><span class="line">            cur = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> pre;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
+<p>? 还要递归 递归又容易爆栈又容易错  去 tm 的 递归都给爷爬  不写递归！（好好好 晚点写 晚点写）</p>
+<h2 id="题解"><a class="markdownIt-Anchor" href="#题解">#</a> 题解：</h2>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     public int val;</span></span><br><span class="line"><span class="comment"> *     public ListNode next;</span></span><br><span class="line"><span class="comment"> *     public ListNode(int val=0, ListNode next=null) &#123;</span></span><br><span class="line"><span class="comment"> *         this.val = val;</span></span><br><span class="line"><span class="comment"> *         this.next = next;</span></span><br><span class="line"><span class="comment"> *     &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">ReverseList</span>(<span class="params">ListNode head</span>)</span> &#123;</span><br><span class="line">        ListNode pre = <span class="literal">null</span>;</span><br><span class="line">        ListNode cur = head;</span><br><span class="line">        ListNode temp = <span class="keyword">new</span>();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// //只有一个头结点 这里考虑错了 应为链表可能为空</span></span><br><span class="line">        <span class="comment">// if(cur.next == null) &#123;</span></span><br><span class="line">        <span class="comment">//     return head;</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(cur != <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="comment">//需要保存一个temp 记录cur.next</span></span><br><span class="line">            temp = cur.next;</span><br><span class="line">            cur.next = pre;</span><br><span class="line">            pre = cur;</span><br><span class="line">            cur = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> pre;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>我在边界考虑的时候有点考虑多余了 忘记了 还有可能出现空链表的情况。</p>
 <p>感觉笔记得算是日记了  毕竟每天都得逼自己记！</p>
 

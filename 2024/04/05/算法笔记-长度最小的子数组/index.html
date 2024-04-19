@@ -9,11 +9,13 @@
 
 
 
-    <meta name="description" content="长度最小的子数组
+    <meta name="description" content="# 长度最小的子数组
+
 前言：这题也算是中等题目 我次次做次次错 ，我自然是知道自己的坏习惯的 每次隔个几个月就暗暗下定决心刷算法。然后每次都是从一开始写就感到挫折。一道题写半天还是错啊，一道题想一天还是没思路啊 巴拉巴拉。不知不觉 大部分业务都能写了，结果算法还是一窍不通。自感悲哀
 
-题目
-给定一个含有"/>
+# 题目
+
+"/>
 
 
 <!--Author-->
@@ -28,11 +30,13 @@
 
 <!--Open Graph Description-->
 
-    <meta property="og:description" content="长度最小的子数组
+    <meta property="og:description" content="# 长度最小的子数组
+
 前言：这题也算是中等题目 我次次做次次错 ，我自然是知道自己的坏习惯的 每次隔个几个月就暗暗下定决心刷算法。然后每次都是从一开始写就感到挫折。一道题写半天还是错啊，一道题想一天还是没思路啊 巴拉巴拉。不知不觉 大部分业务都能写了，结果算法还是一窍不通。自感悲哀
 
-题目
-给定一个含有"/>
+# 题目
+
+"/>
 
 
 <!--Open Graph Site Name-->
@@ -97,7 +101,7 @@
     
 
 
-<meta name="generator" content="Hexo 7.1.1"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 <!-- Head tag -->
 
 <body>
@@ -164,23 +168,22 @@
     
 </span>  
                 
-                <h1 id="长度最小的子数组"><a href="#长度最小的子数组" class="headerlink" title="长度最小的子数组"></a>长度最小的子数组</h1><blockquote>
+                <h1 id="长度最小的子数组"><a class="markdownIt-Anchor" href="#长度最小的子数组">#</a> 长度最小的子数组</h1>
+<blockquote>
 <p>前言：这题也算是中等题目 我次次做次次错 ，我自然是知道自己的坏习惯的 每次隔个几个月就暗暗下定决心刷算法。然后每次都是从一开始写就感到挫折。一道题写半天还是错啊，一道题想一天还是没思路啊 巴拉巴拉。不知不觉 大部分业务都能写了，结果算法还是一窍不通。自感悲哀</p>
 </blockquote>
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><blockquote>
-<p>给定一个含有 <code>n</code> 个正整数的数组和一个正整数 <code>target</code> <strong>。</strong></p>
-<p>找出该数组中满足其总和大于等于 <code>target</code> 的长度最小的 <strong>连续</strong></p>
+<h3 id="题目"><a class="markdownIt-Anchor" href="#题目">#</a> 题目</h3>
+<blockquote>
+<p>给定一个含有  <code>n</code>  个正整数的数组和一个正整数  <code>target</code>  <strong>。</strong></p>
+<p>找出该数组中满足其总和大于等于  <code>target</code>  的长度最小的 <strong>连续</strong></p>
 <p><strong>子数组</strong></p>
-<p><code>[numsl, numsl+1, ..., numsr-1, numsr]</code> ，并返回其长度<strong>。</strong>如果不存在符合条件的子数组，返回 <code>0</code> 。</p>
+<p><code>[numsl, numsl+1, ..., numsr-1, numsr]</code>  ，并返回其长度 **。** 如果不存在符合条件的子数组，返回  <code>0</code>  。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：target = 7, nums = [2,3,1,2,4,3]</span><br><span class="line">输出：2</span><br><span class="line">解释：子数组 [4,3] 是该条件下的长度最小的子数组。</span><br></pre></td></tr></table></figure>
-
 <p><strong>示例 2：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：target = 4, nums = [1,4,4]</span><br><span class="line">输出：1</span><br></pre></td></tr></table></figure>
-
 <p><strong>示例 3：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：target = 11, nums = [1,1,1,1,1,1,1,1]</span><br><span class="line">输出：0</span><br></pre></td></tr></table></figure>
-
 <p><strong>提示：</strong></p>
 <ul>
 <li><code>1 &lt;= target &lt;= 109</code></li>
@@ -189,27 +192,24 @@
 </ul>
 <p><strong>进阶：</strong></p>
 <ul>
-<li>如果你已经实现 <code>O(n)</code> 时间复杂度的解法, 请尝试设计一个 <code>O(n log(n))</code> 时间复杂度的解法。</li>
+<li>如果你已经实现  <code>O(n)</code>  时间复杂度的解法，请尝试设计一个  <code>O(n log(n))</code>  时间复杂度的解法。</li>
 </ul>
 </blockquote>
-<p>解法1 暴力解法：</p>
+<p>解法 1 暴力解法：</p>
 <p>我的解答：</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">int</span> <span class="title">MinSubArrayLen</span>(<span class="params"><span class="built_in">int</span> target, <span class="built_in">int</span>[] nums</span>)</span> &#123;</span><br><span class="line">        <span class="built_in">int</span> result = <span class="built_in">int</span>.MaxValue;</span><br><span class="line">        <span class="built_in">int</span> i =<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(i= <span class="number">0</span>;i&lt;nums.Length;i++)&#123;</span><br><span class="line">            <span class="built_in">int</span> sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="built_in">int</span> j = i; j&lt;nums.Length;j++)&#123;</span><br><span class="line">                sum += nums[j];</span><br><span class="line">                <span class="keyword">if</span>(sum &gt;= target)&#123;</span><br><span class="line">                    <span class="keyword">if</span>((j - i)+<span class="number">1</span> &lt;= result)</span><br><span class="line">                    result = (j - i)+<span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result == <span class="built_in">int</span>.MaxValue? <span class="number">0</span> : result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>因为力扣已经不让用这种方法去解答了 会超时</p>
 <p>但这样写应该是能符合需求的</p>
-<p>标准答案C++的暴力循环</p>
+<p>标准答案 C++ 的暴力循环</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="type">int</span> s, vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> result = INT32_MAX; <span class="comment">// 最终的结果</span></span><br><span class="line">        <span class="type">int</span> sum = <span class="number">0</span>; <span class="comment">// 子序列的数值之和</span></span><br><span class="line">        <span class="type">int</span> subLength = <span class="number">0</span>; <span class="comment">// 子序列的长度</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; nums.<span class="built_in">size</span>(); i++) &#123; <span class="comment">// 设置子序列起点为i</span></span><br><span class="line">            sum = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = i; j &lt; nums.<span class="built_in">size</span>(); j++) &#123; <span class="comment">// 设置子序列终止位置为j</span></span><br><span class="line">                sum += nums[j];</span><br><span class="line">                <span class="keyword">if</span> (sum &gt;= s) &#123; <span class="comment">// 一旦发现子序列和超过了s，更新result</span></span><br><span class="line">                    subLength = j - i + <span class="number">1</span>; <span class="comment">// 取子序列的长度</span></span><br><span class="line">                    result = result &lt; subLength ? result : subLength;</span><br><span class="line">                    <span class="keyword">break</span>; <span class="comment">// 因为我们是找符合条件最短的子序列，所以一旦符合条件就break</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 如果result没有被赋值的话，就返回0，说明没有符合条件的子序列</span></span><br><span class="line">        <span class="keyword">return</span> result == INT32_MAX ? <span class="number">0</span> : result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
 <p>答案的写法 可读性和性能肯定比我的好</p>
-<p>好了 上面都是没啥用的 因为这题要用滑动窗口去写 </p>
+<p>好了 上面都是没啥用的 因为这题要用滑动窗口去写</p>
 <p>示例图：</p>
 <div class="img-item" data-src="/2024/04/05/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0-%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/209.%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84.gif" data-sub-html=".caption"><img src="/2024/04/05/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0-%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84/209.%E9%95%BF%E5%BA%A6%E6%9C%80%E5%B0%8F%E7%9A%84%E5%AD%90%E6%95%B0%E7%BB%84.gif" class="" title="209.长度最小的子数组"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">209.长度最小的子数组</span></div></div>
-
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">int</span> <span class="title">MinSubArrayLen</span>(<span class="params"><span class="built_in">int</span> target, <span class="built_in">int</span>[] nums</span>)</span> &#123;</span><br><span class="line">        <span class="built_in">int</span> i = <span class="number">0</span>; <span class="comment">//滑动窗口起始位置</span></span><br><span class="line">        <span class="built_in">int</span> j = <span class="number">0</span>; <span class="comment">//滑动窗口终止位置  这里注意 j是循环完一次数组的</span></span><br><span class="line">        <span class="built_in">int</span> subSize = <span class="number">0</span>; <span class="comment">//窗口长度</span></span><br><span class="line">        <span class="built_in">int</span> result = <span class="built_in">int</span>.MaxValue; <span class="comment">//依旧是结果从最大值取起</span></span><br><span class="line">        <span class="built_in">int</span> sum = <span class="number">0</span>; <span class="comment">//总和 这里注意不要放内部计算 在循环内部会加加减减</span></span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;nums.Length;j++)&#123;</span><br><span class="line">            sum += nums[j];</span><br><span class="line">            <span class="keyword">while</span>(sum &gt;= target)&#123;</span><br><span class="line">                <span class="comment">//计算窗口长度</span></span><br><span class="line">                subSize = j-i+<span class="number">1</span>;</span><br><span class="line">                <span class="comment">//判断一下结果与窗口长度 如果结果小于窗口 不赋值 为最大值 </span></span><br><span class="line">                result = result &lt; subSize? result :subSize;</span><br><span class="line">                sum -= nums[i];</span><br><span class="line">                <span class="comment">//起始位置前移</span></span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> result == <span class="built_in">int</span>.MaxValue? <span class="number">0</span>:result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h2 id="题解"><a class="markdownIt-Anchor" href="#题解">#</a> 题解</h2>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">int</span> <span class="title">MinSubArrayLen</span>(<span class="params"><span class="built_in">int</span> target, <span class="built_in">int</span>[] nums</span>)</span> &#123;</span><br><span class="line">        <span class="built_in">int</span> i = <span class="number">0</span>; <span class="comment">//滑动窗口起始位置</span></span><br><span class="line">        <span class="built_in">int</span> j = <span class="number">0</span>; <span class="comment">//滑动窗口终止位置  这里注意 j是循环完一次数组的</span></span><br><span class="line">        <span class="built_in">int</span> subSize = <span class="number">0</span>; <span class="comment">//窗口长度</span></span><br><span class="line">        <span class="built_in">int</span> result = <span class="built_in">int</span>.MaxValue; <span class="comment">//依旧是结果从最大值取起</span></span><br><span class="line">        <span class="built_in">int</span> sum = <span class="number">0</span>; <span class="comment">//总和 这里注意不要放内部计算 在循环内部会加加减减</span></span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;nums.Length;j++)&#123;</span><br><span class="line">            sum += nums[j];</span><br><span class="line">            <span class="keyword">while</span>(sum &gt;= target)&#123;</span><br><span class="line">                <span class="comment">//计算窗口长度</span></span><br><span class="line">                subSize = j-i+<span class="number">1</span>;</span><br><span class="line">                <span class="comment">//判断一下结果与窗口长度 如果结果小于窗口 不赋值 为最大值 </span></span><br><span class="line">                result = result &lt; subSize? result :subSize;</span><br><span class="line">                sum -= nums[i];</span><br><span class="line">                <span class="comment">//起始位置前移</span></span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> result == <span class="built_in">int</span>.MaxValue? <span class="number">0</span>:result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这里说一个可笑的小插曲</p>
-<p>我注意一下如果换成 <code>result = result &lt; subSize? result :subSize;</code> 这句 其实一样 但我写题的时候纠结很久  因为我当时纠结的地方错了  我以外如果判断顺序反了 比如写成 result &#x3D; subSize&lt; result ? subSize :result ; 我想 result就不可能为int.MaxValue 那如何有让result保持初始值的情况呢。其实是我忽略了while中的判断条件 如果while根本不进入 那result就会一直保持初始值。这里只是我想错了导致的无意义纠结。</p>
+<p>我注意一下如果换成  <code>result = result &lt; subSize? result :subSize;</code>  这句 其实一样 但我写题的时候纠结很久  因为我当时纠结的地方错了  我以外如果判断顺序反了 比如写成 result = subSize&lt; result ? subSize :result ; 我想 result 就不可能为 int.MaxValue 那如何有让 result 保持初始值的情况呢。其实是我忽略了 while 中的判断条件 如果 while 根本不进入 那 result 就会一直保持初始值。这里只是我想错了导致的无意义纠结。</p>
 
             </div>
 

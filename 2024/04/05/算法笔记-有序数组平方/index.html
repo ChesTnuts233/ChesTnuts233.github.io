@@ -9,11 +9,13 @@
 
 
 
-    <meta name="description" content="有序数组的平方
+    <meta name="description" content="# 有序数组的平方
+
 前言 ： 这题算是第二次写了 记的还是比较清楚的 第一次写肯定想着暴力写法 先平方再排序 后面想明白了就知道 从两边开始比较  因为这个数组是有序的 大的一定在两边 所以新的数组从两边开始
 
-题目
-给你一个按 非递减顺序 排序的整数数组 nums，返回 每个数字的平方 组成的新数组，"/>
+# 题目
+
+给你一个按 非递减顺序 排序的整数数组  nums ，返回 每个数字的平方"/>
 
 
 <!--Author-->
@@ -28,11 +30,13 @@
 
 <!--Open Graph Description-->
 
-    <meta property="og:description" content="有序数组的平方
+    <meta property="og:description" content="# 有序数组的平方
+
 前言 ： 这题算是第二次写了 记的还是比较清楚的 第一次写肯定想着暴力写法 先平方再排序 后面想明白了就知道 从两边开始比较  因为这个数组是有序的 大的一定在两边 所以新的数组从两边开始
 
-题目
-给你一个按 非递减顺序 排序的整数数组 nums，返回 每个数字的平方 组成的新数组，"/>
+# 题目
+
+给你一个按 非递减顺序 排序的整数数组  nums ，返回 每个数字的平方"/>
 
 
 <!--Open Graph Site Name-->
@@ -97,7 +101,7 @@
     
 
 
-<meta name="generator" content="Hexo 7.1.1"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 <!-- Head tag -->
 
 <body>
@@ -164,43 +168,35 @@
     
 </span>  
                 
-                <h1 id="有序数组的平方"><a href="#有序数组的平方" class="headerlink" title="有序数组的平方"></a>有序数组的平方</h1><blockquote>
+                <h1 id="有序数组的平方"><a class="markdownIt-Anchor" href="#有序数组的平方">#</a> 有序数组的平方</h1>
+<blockquote>
 <p>前言 ： 这题算是第二次写了 记的还是比较清楚的 第一次写肯定想着暴力写法 先平方再排序 后面想明白了就知道 从两边开始比较  因为这个数组是<strong>有序的</strong> 大的一定在两边 所以新的数组从两边开始</p>
 </blockquote>
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><blockquote>
-<p>给你一个按 <strong>非递减顺序</strong> 排序的整数数组 <code>nums</code>，返回 <strong>每个数字的平方</strong> 组成的新数组，要求也按 <strong>非递减顺序</strong> 排序。</p>
+<h3 id="题目"><a class="markdownIt-Anchor" href="#题目">#</a> 题目</h3>
+<blockquote>
+<p>给你一个按 <strong>非递减顺序</strong> 排序的整数数组  <code>nums</code> ，返回 <strong>每个数字的平方</strong> 组成的新数组，要求也按 <strong>非递减顺序</strong> 排序。</p>
 <p><strong>示例 1：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [-4,-1,0,3,10]</span><br><span class="line">输出：[0,1,9,16,100]</span><br><span class="line">解释：平方后，数组变为 [16,1,0,9,100]</span><br><span class="line">排序后，数组变为 [0,1,9,16,100]</span><br></pre></td></tr></table></figure>
-
 <p><strong>示例 2：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [-7,-3,2,3,11]</span><br><span class="line">输出：[4,9,9,49,121]</span><br></pre></td></tr></table></figure>
-
 <p><strong>提示：</strong></p>
 <ul>
 <li><code>1 &lt;= nums.length &lt;= 104</code></li>
 <li><code>-104 &lt;= nums[i] &lt;= 104</code></li>
-<li><code>nums</code> 已按 <strong>非递减顺序</strong> 排序</li>
+<li><code>nums</code>  已按 <strong>非递减顺序</strong> 排序</li>
 </ul>
 </blockquote>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">int</span>[] <span class="title">SortedSquares</span>(<span class="params"><span class="built_in">int</span>[] nums</span>)</span> &#123;</span><br><span class="line">        <span class="comment">//从两头开始 </span></span><br><span class="line">        <span class="built_in">int</span> right = nums.Length<span class="number">-1</span>;</span><br><span class="line">        <span class="built_in">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">int</span>[] result = <span class="keyword">new</span> <span class="built_in">int</span>[nums.Length];</span><br><span class="line">        <span class="built_in">int</span> size = nums.Length<span class="number">-1</span>;</span><br><span class="line">        <span class="comment">//当左指针不再小于右指针的时候 不再循环</span></span><br><span class="line">        <span class="keyword">while</span>(size &gt;= <span class="number">0</span>)&#123; </span><br><span class="line">            <span class="comment">//如果左平方大于右平方</span></span><br><span class="line">            <span class="keyword">if</span>(nums[left]*nums[left] &gt; nums[right] * nums[right])&#123;</span><br><span class="line">                result[size] = nums[left] * nums[left];</span><br><span class="line">                left++;</span><br><span class="line">                size--;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                result[size] = nums[right] * nums[right];</span><br><span class="line">                right--;</span><br><span class="line">                size--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>这里叭叭一下 我写题的心路历程吧 因为是写过的 所以知道从两头开始算 但奈何还是犯傻了 size居然从0开始  因为两边必然有一方是最大的 所以 肯定啊 新数组从右边开始填充就是错的啊 结果会变成 直接平方的顺序啦。</p>
-<p>这里我感觉还能优化一下空间复杂度 不需要有一个新的数组 直接覆盖试试 </p>
+<h2 id="题解"><a class="markdownIt-Anchor" href="#题解">#</a> 题解</h2>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">int</span>[] <span class="title">SortedSquares</span>(<span class="params"><span class="built_in">int</span>[] nums</span>)</span> &#123;</span><br><span class="line">        <span class="comment">//从两头开始 </span></span><br><span class="line">        <span class="built_in">int</span> right = nums.Length<span class="number">-1</span>;</span><br><span class="line">        <span class="built_in">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">int</span>[] result = <span class="keyword">new</span> <span class="built_in">int</span>[nums.Length];</span><br><span class="line">        <span class="built_in">int</span> size = nums.Length<span class="number">-1</span>;</span><br><span class="line">        <span class="comment">//当左指针不再小于右指针的时候 不再循环</span></span><br><span class="line">        <span class="keyword">while</span>(size &gt;= <span class="number">0</span>)&#123; </span><br><span class="line">            <span class="comment">//如果左平方大于右平方</span></span><br><span class="line">            <span class="keyword">if</span>(nums[left]*nums[left] &gt; nums[right] * nums[right])&#123;</span><br><span class="line">                result[size] = nums[left] * nums[left];</span><br><span class="line">                left++;</span><br><span class="line">                size--;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                result[size] = nums[right] * nums[right];</span><br><span class="line">                right--;</span><br><span class="line">                size--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里叭叭一下 我写题的心路历程吧 因为是写过的 所以知道从两头开始算 但奈何还是犯傻了 size 居然从 0 开始  因为两边必然有一方是最大的 所以 肯定啊 新数组从右边开始填充就是错的啊 结果会变成 直接平方的顺序啦。</p>
+<p>这里我感觉还能优化一下空间复杂度 不需要有一个新的数组 直接覆盖试试</p>
 <p>好嘞 虽然时间不够 但试试看</p>
 <p>（你要时间多也不会花小半天弄没用的博客。。。工作还做不做了？）</p>
 <p>（QwQ 我是真把自己当黑奴了啊）</p>
-<p>然后就有了下面的想法 </p>
+<p>然后就有了下面的想法</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">int</span>[] <span class="title">SortedSquares</span>(<span class="params"><span class="built_in">int</span>[] nums</span>)</span> &#123;</span><br><span class="line">        <span class="comment">//从两头开始 </span></span><br><span class="line">        <span class="built_in">int</span> right = nums.Length<span class="number">-1</span>;</span><br><span class="line">        <span class="built_in">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// int[] result = new int[nums.Length];</span></span><br><span class="line">        <span class="built_in">int</span> size = nums.Length<span class="number">-1</span>;</span><br><span class="line">        <span class="comment">//当左指针不再小于右指针的时候 不再循环</span></span><br><span class="line">        <span class="keyword">while</span>(size &gt;= <span class="number">0</span>)&#123; </span><br><span class="line">            <span class="comment">//如果左平方大于右平方 这时候右边会被覆盖</span></span><br><span class="line">            <span class="keyword">if</span>(nums[left]*nums[left] &gt; nums[right] * nums[right])&#123;</span><br><span class="line">                nums[size] = nums[left] * nums[left];</span><br><span class="line">                size--;</span><br><span class="line">                nums[size] = nums[right] * nums[right];</span><br><span class="line">                size--;</span><br><span class="line">                left++;</span><br><span class="line">                right--;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="comment">//右边大于左边 这时候不会被覆盖</span></span><br><span class="line">                nums[size] = nums[right] * nums[right];</span><br><span class="line">                right--;</span><br><span class="line">                size--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <p>很好  very good</p>
 <div class="img-item" data-src="/2024/04/05/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0-%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E5%B9%B3%E6%96%B9/image-20240405143814891.png" data-sub-html=".caption"><img src="/2024/04/05/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0-%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E5%B9%B3%E6%96%B9/image-20240405143814891.png" class="" title="image-20240405143814891"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">image-20240405143814891</span></div></div>
-
-
-
-
-
 
             </div>
 
