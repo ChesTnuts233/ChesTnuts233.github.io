@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<!--Description-->
+
+
+
+    <meta name="description" content="两数之和
+随笔：今天cs2 直接C+掉C了 为了冲回C+ 叫来两个B 好家伙 队友打完成C+了 。。。。。
+
+题目
+给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target 的那 两个 整数，并返回它们的数组下标。
+你可以假设每种输入只会对应一个答案。"/>
+
+
+<!--Author-->
+
+    <meta name="author" content="Koo"/>
+
+
+<!--Open Graph Title-->
+
+    <meta property="og:title" content="算法笔记-两数之和"/>
+
+
+<!--Open Graph Description-->
+
+    <meta property="og:description" content="两数之和
+随笔：今天cs2 直接C+掉C了 为了冲回C+ 叫来两个B 好家伙 队友打完成C+了 。。。。。
+
+题目
+给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target 的那 两个 整数，并返回它们的数组下标。
+你可以假设每种输入只会对应一个答案。"/>
+
+
+<!--Open Graph Site Name-->
+    <meta property="og:site_name" content="你好 这里是Koo"/>
+
+<!--Type page-->
+
+    <meta property="og:type" content="article"/>
+
+
+<!--Page Cover-->
+
+
+    <meta property="og:image" content="http://example.com/img/home-bg.jpg"/>
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+
+
+
+
+    <meta name="twitter:image" content="http://example.com/img/home-bg.jpg"/>
+
+
+<!-- Title -->
+
+<title>算法笔记-两数之和 | 你好 这里是Koo</title>
+
+<!-- Bootstrap Core CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+
+<!-- Custom CSS -->
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<!-- Custom Fonts -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.0/css/all.min.css" />
+<link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.0/css/all.min.css" />
+<link href="//fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- Gallery -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/featherlight@1.4.0/src/featherlight.css" integrity="sha256-30DV/STftlyQ6v8yaOWlabammvCYtRJERLj/m0b3zno=" crossorigin="anonymous">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/lightgallery@1.6.11/dist/css/lightgallery.min.css">
+
+<!-- favicon -->
+
+<link rel="icon" href="/img/favicon.png"/>
+
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+<!-- Head tag -->
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top bg-transparent position-absolute w-100 p-0" id="nav">
+    <div class="container pl-0 pr-0">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <a class="navbar-brand text-white p-1 pl-3" href="/">主页</a>
+        </div>
+        <div class="navbar-nav float-right">
+            <button class="btn btn-link search-btn navbar-item" data-toggle="modal" data-target="#searchModal">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 text-center">
+                <div class="post-heading text-white">
+                    <h1>算法笔记-两数之和</h1>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Main Content -->
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                
+                    <span class="meta d-inline-block">
+    
+    
+    <!-- Date -->
+    
+        <span class="post-meta-split">&nbsp;|&nbsp;</span>
+        <i class="far fa-calendar-check fa-fw"></i>
+        2024-04-16
+    
+    <!-- word count and read count -->
+    
+
+    
+
+    
+        <span class="post-meta-split">&nbsp;|&nbsp;</span>
+        <i class="far fa-eye fa-fw"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    
+</span>  
+                
+                <h1 id="两数之和"><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h1><blockquote>
+<p>随笔：今天cs2 直接C+掉C了 为了冲回C+ 叫来两个B 好家伙 队友打完成C+了 。。。。。</p>
+</blockquote>
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><blockquote>
+<p>给定一个整数数组 <code>nums</code> 和一个整数目标值 <code>target</code>，请你在该数组中找出 <strong>和为目标值</strong> <em><code>target</code></em> 的那 <strong>两个</strong> 整数，并返回它们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。</p>
+<p>你可以按任意顺序返回答案。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [2,7,11,15], target = 9</span><br><span class="line">输出：[0,1]</span><br><span class="line">解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [3,2,4], target = 6</span><br><span class="line">输出：[1,2]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [3,3], target = 6</span><br><span class="line">输出：[0,1]</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>2 &lt;= nums.length &lt;= 104</code></li>
+<li><code>-109 &lt;= nums[i] &lt;= 109</code></li>
+<li><code>-109 &lt;= target &lt;= 109</code></li>
+<li><strong>只会存在一个有效答案</strong></li>
+</ul>
+<p><strong>进阶：</strong>你可以想出一个时间复杂度小于 <code>O(n2)</code> 的算法吗？给定一个整数数组 <code>nums</code> 和一个整数目标值 <code>target</code>，请你在该数组中找出 <strong>和为目标值</strong> <em><code>target</code></em> 的那 <strong>两个</strong> 整数，并返回它们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。</p>
+<p>你可以按任意顺序返回答案。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [2,7,11,15], target = 9</span><br><span class="line">输出：[0,1]</span><br><span class="line">解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [3,2,4], target = 6</span><br><span class="line">输出：[1,2]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [3,3], target = 6</span><br><span class="line">输出：[0,1]</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>2 &lt;= nums.length &lt;= 104</code></li>
+<li><code>-109 &lt;= nums[i] &lt;= 109</code></li>
+<li><code>-109 &lt;= target &lt;= 109</code></li>
+<li><strong>只会存在一个有效答案</strong></li>
+</ul>
+<p><strong>进阶：</strong>你可以想出一个时间复杂度小于 <code>O(n2)</code> 的算法吗？</p>
+</blockquote>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。</span></span><br><span class="line"><span class="comment">// 你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。</span></span><br><span class="line"><span class="comment">// 你可以按任意顺序返回答案。</span></span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 使用哈希表的方法</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;nums&quot;&gt;</span><span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;target&quot;&gt;</span><span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span><span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">int</span>[] <span class="title">GetTwoSum1</span>(<span class="params"><span class="built_in">int</span>[] nums, <span class="built_in">int</span> target</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">	Dictionary&lt;<span class="built_in">int</span>,<span class="built_in">int</span>&gt; keyValuePairs = <span class="keyword">new</span> Dictionary&lt;<span class="built_in">int</span>,<span class="built_in">int</span>&gt;();</span><br><span class="line">	<span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; nums.Length; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (keyValuePairs.ContainsKey(target - nums[i]))</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">int</span>[] &#123; keyValuePairs[target - nums[i]], i &#125;;</span><br><span class="line">		&#125;</span><br><span class="line">		keyValuePairs[nums[i]] = i;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> O(N^2)方法</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;nums&quot;&gt;</span>数列数组<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;target&quot;&gt;</span>两数之和<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span><span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="built_in">int</span>[] <span class="title">GetTwoSum2</span>(<span class="params"><span class="built_in">int</span>[] nums, <span class="built_in">int</span> target</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">int</span>[] result = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">2</span>];</span><br><span class="line">	<span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; nums.Length; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="built_in">int</span> j = i + <span class="number">1</span>; j &lt; nums.Length; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (nums[i] + nums[j] == target)</span><br><span class="line">			&#123;</span><br><span class="line">				result[<span class="number">0</span>] = i;</span><br><span class="line">				result[<span class="number">1</span>] = j;</span><br><span class="line">				<span class="keyword">return</span> result;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+            </div>
+
+            <!-- Post information -->
+            
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 post-tags">
+        
+            <i class="fas fa-tag" style="vertical-align: middle;font-size: .8rem;"></i>
+            tags:&nbsp;
+            
+            
+        
+            <a href="/tags/算法/">#算法</a>
+        
+    </div>
+
+            
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+        <ul class="pagination d-block text-center">
+            
+                <li class="previous page-item d-inline"><a href="/2024/04/18/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0-%E5%9B%9B%E6%95%B0%E7%9B%B8%E5%8A%A0II/" class="page-link float-left">&larr;  下一页</a></li>
+            
+            
+                <li class="next page-item d-inline"><a href="/2024/04/16/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0-%E5%BF%AB%E4%B9%90%E6%95%B0/" class="page-link float-right">上一页  &rarr;</a></li>
+            
+        </ul>
+    </div>
+
+
+            
+                <!-- Comments -->
+                
+    
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+        <div id="gitalk-container"></div>
+    </div>
+
+    <script>
+        let gitalk = new Gitalk({
+            clientID: 'eaea798f9d267dfb0596',
+            clientSecret: '8610f0efff4d6df738a96c44273f97fa91861414',
+            repo: 'ChesTnuts233.github.io',
+            owner: 'ChesTnuts233',
+            admin: "ChesTnuts233",
+            id: '2024-04-16 22:11:05',
+            title: '算法笔记-两数之和',
+            distractionFreeMode: false  // Facebook-like distraction free mode
+        });
+        gitalk.render('gitalk-container');
+    </script>
+
+
+                
+
+            
+
+        </div>
+    </div>
+</article> 
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    <style>
+        #toc-content .toc-link::before {
+            background-color: transparent;
+            max-height: 25px;
+        }
+
+        #toc-content .toc-link.is-active-link::before {
+            background-color: #404040;
+        }
+    </style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <div class="ui-toc dropup scrollspy-body pull-right" style="right: 3%;">
+        <button type="button" class="toc-btn btn btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+            <i class="fas fa-list"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right p-2"  aria-labelledby="tocLabel">
+            <div class="toc-widget">
+                <div id="toc-content" class="text-truncate">
+                </div>
+            </div>
+            <div class="toc-menu pt-3 pl-4">
+                <a class="expand-toggle d-block py-1" href="#"><span class="expand-text">全部展开</span><span class="close-text" style="display: none;">全部收起</span></a>
+                <a class="back-to-top d-block py-1" href="#">回到顶部</a>
+                <a class="go-to-bottom d-block py-1" href="#">移至底部</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '#toc-content',
+            // Where to grab the headings to build the table of contents.
+            contentSelector: 'article',
+            // Which headings to grab inside of the contentSelector element.
+            headingSelector: 'h1, h2, h3',
+            // For headings inside relative or absolute positioned containers within content.
+            hasInnerContainers: true,
+        });
+    </script>
+
+
+    
+
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 text-center">
+                <ul class="list-inline">
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <ul class="copyright footer-menu list-inline">
+                    
+                    
+                        <li class="list-inline-item">
+                            
+                            
+                            <a href="/">
+                                
+                                    Home
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/archives">
+                                
+                                    Archives
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/tags">
+                                
+                                    Tags
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/categories">
+                                
+                                    Categories
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/about">
+                                
+                                    About
+                                
+                            </a>
+                        </li>
+                    
+                </ul>
+                <p class="copyright footer-author">
+                    &copy; -2024 
+                    <a rel="external" class="copyright-link" href="" target="_blank">Koo</a><br/>
+                    Powered by <a rel="external" class="copyright-link" href="https://hexo.io/" target="_blank">Hexo</a>  
+                    <span class="copyright-split">&nbsp;|&nbsp;&nbsp;</span>
+                    Theme <a rel="external" class="copyright-link" href="https://github.com/luswdev/hexo-theme-clean.git" target="_blank">Clean</a>
+                    
+                        <br/>
+                        <span id="busuanzi_container_site_pv">
+                            <i class="fas fa-eye"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;
+                        </span>
+                    
+                    
+                        <span id="busuanzi_container_site_uv">
+                            <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            <i class="fas fa-user-friends"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>&nbsp;
+                        </span>
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    <!-- jQuery -->
+<script src="//cdn.jsdelivr.net/npm/jquery@2.1.4/dist/jquery.min.js"></script>
+
+<!-- For drop down -->
+<script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
+<!-- Gallery -->
+<script src="//cdn.jsdelivr.net/npm/lightgallery@1.6.11/dist/js/lightgallery-all.min.js"></script>
+<!-- Busuanzi -->
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<!-- Search script -->
+
+<script src="/js/search.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        searchFunc( '/search.xml' , 'searchInput', 'searchResult');
+    });
+</script>
+
+
+
+<script src="/js/main.js"></script>
+
+
+
+    <!-- Search Modal -->
+    <!-- Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+        <div class="modal-content overflow-auto">
+            <div class="modal-header">
+                <input type="text" class="form-control" placeholder="搜索关键词..." id="searchInput">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div id="searchResult">
+                    <div class="search-empty text-center text-muted p-5">
+                        <i class="far fa-meh"></i>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

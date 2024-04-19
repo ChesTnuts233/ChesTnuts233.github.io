@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<!--Description-->
+
+
+
+    <meta name="description" content="四数之和
+随笔：四数之和相比三数之和 多了很多细节 比如要多套一层循环 去重复的时候 要while遍历 防止没有去除干净 此外 还要考虑 如  target是任意值。比如：数组是[-4, -3, -2, -1]，target是-10，不能因为-4 &amp;gt; -10而跳过
+
+题目
+给你一个由 n 个整"/>
+
+
+<!--Author-->
+
+    <meta name="author" content="Koo"/>
+
+
+<!--Open Graph Title-->
+
+    <meta property="og:title" content="算法笔记-四数之和"/>
+
+
+<!--Open Graph Description-->
+
+    <meta property="og:description" content="四数之和
+随笔：四数之和相比三数之和 多了很多细节 比如要多套一层循环 去重复的时候 要while遍历 防止没有去除干净 此外 还要考虑 如  target是任意值。比如：数组是[-4, -3, -2, -1]，target是-10，不能因为-4 &amp;gt; -10而跳过
+
+题目
+给你一个由 n 个整"/>
+
+
+<!--Open Graph Site Name-->
+    <meta property="og:site_name" content="你好 这里是Koo"/>
+
+<!--Type page-->
+
+    <meta property="og:type" content="article"/>
+
+
+<!--Page Cover-->
+
+
+    <meta property="og:image" content="http://example.com/img/home-bg.jpg"/>
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+
+
+
+
+    <meta name="twitter:image" content="http://example.com/img/home-bg.jpg"/>
+
+
+<!-- Title -->
+
+<title>算法笔记-四数之和 | 你好 这里是Koo</title>
+
+<!-- Bootstrap Core CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+
+<!-- Custom CSS -->
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<!-- Custom Fonts -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.0/css/all.min.css" />
+<link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.0/css/all.min.css" />
+<link href="//fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- Gallery -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/featherlight@1.4.0/src/featherlight.css" integrity="sha256-30DV/STftlyQ6v8yaOWlabammvCYtRJERLj/m0b3zno=" crossorigin="anonymous">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/lightgallery@1.6.11/dist/css/lightgallery.min.css">
+
+<!-- favicon -->
+
+<link rel="icon" href="/img/favicon.png"/>
+
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+<!-- Head tag -->
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top bg-transparent position-absolute w-100 p-0" id="nav">
+    <div class="container pl-0 pr-0">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <a class="navbar-brand text-white p-1 pl-3" href="/">主页</a>
+        </div>
+        <div class="navbar-nav float-right">
+            <button class="btn btn-link search-btn navbar-item" data-toggle="modal" data-target="#searchModal">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 text-center">
+                <div class="post-heading text-white">
+                    <h1>算法笔记-四数之和</h1>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Main Content -->
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                
+                    <span class="meta d-inline-block">
+    
+    
+    <!-- Date -->
+    
+        <span class="post-meta-split">&nbsp;|&nbsp;</span>
+        <i class="far fa-calendar-check fa-fw"></i>
+        2024-04-19
+    
+    <!-- word count and read count -->
+    
+
+    
+
+    
+        <span class="post-meta-split">&nbsp;|&nbsp;</span>
+        <i class="far fa-eye fa-fw"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    
+</span>  
+                
+                <h1 id="四数之和"><a href="#四数之和" class="headerlink" title="四数之和"></a>四数之和</h1><blockquote>
+<p>随笔：四数之和相比三数之和 多了很多细节 比如要多套一层循环 去重复的时候 要while遍历 防止没有去除干净 此外 还要考虑 如  target是任意值。比如：数组是<code>[-4, -3, -2, -1]</code>，<code>target</code>是<code>-10</code>，不能因为<code>-4 &gt; -10</code>而跳过</p>
+</blockquote>
+<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><blockquote>
+<p>给你一个由 <code>n</code> 个整数组成的数组 <code>nums</code> ，和一个目标值 <code>target</code> 。请你找出并返回满足下述全部条件且<strong>不重复</strong>的四元组 <code>[nums[a], nums[b], nums[c], nums[d]]</code> （若两个四元组元素一一对应，则认为两个四元组重复）：</p>
+<ul>
+<li><code>0 &lt;= a, b, c, d &lt; n</code></li>
+<li><code>a</code>、<code>b</code>、<code>c</code> 和 <code>d</code> <strong>互不相同</strong></li>
+<li><code>nums[a] + nums[b] + nums[c] + nums[d] == target</code></li>
+</ul>
+<p>你可以按 <strong>任意顺序</strong> 返回答案 。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [1,0,-1,0,-2,2], target = 0</span><br><span class="line">输出：[[-2,-1,1,2],[-2,0,0,2],[-1,0,0,1]]</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [2,2,2,2,2], target = 8</span><br><span class="line">输出：[[2,2,2,2]]</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 200</code></li>
+<li><code>-109 &lt;= nums[i] &lt;= 109</code></li>
+<li><code>-109 &lt;= target &lt;= 109</code></li>
+</ul>
+</blockquote>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> </span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> IList&lt;IList&lt;<span class="built_in">int</span>&gt;&gt; FourSum(<span class="built_in">int</span>[] nums, <span class="built_in">int</span> target) </span><br><span class="line">    &#123;</span><br><span class="line">        IList&lt;IList&lt;<span class="built_in">int</span>&gt;&gt; result = <span class="keyword">new</span> List&lt;IList&lt;<span class="built_in">int</span>&gt;&gt;();</span><br><span class="line">        <span class="comment">//先对nums进行排序</span></span><br><span class="line">        Array.Sort(nums);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;nums.Length;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//剪枝处理   target是任意值。比如：数组是[-4, -3, -2, -1]，target是-10，不能因为-4 &gt; -10而跳过</span></span><br><span class="line">            <span class="keyword">if</span> (nums[i] &gt; target &amp;&amp; nums[i] &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">            	<span class="keyword">break</span>; <span class="comment">// 这里使用break，统一通过最后的return返回</span></span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(i &gt; <span class="number">0</span> &amp;&amp; nums[i] == nums[i<span class="number">-1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//这里从i+1开始 因为是二重遍历 i在上面已经走完了</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="built_in">int</span> j= i+<span class="number">1</span>;j&lt;nums.Length;j++)</span><br><span class="line">            &#123;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span>(nums[j] + nums[i] &gt; target &amp;&amp; nums[j] + nums[i] &gt;= <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="comment">//去除重复</span></span><br><span class="line">                <span class="keyword">if</span>(j&gt;i+<span class="number">1</span> &amp;&amp; nums[j] == nums[j<span class="number">-1</span>])</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="built_in">int</span> left = j+<span class="number">1</span>;</span><br><span class="line">                <span class="built_in">int</span> right = nums.Length <span class="number">-1</span>;</span><br><span class="line">                <span class="keyword">while</span>(left &lt; right)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="comment">//判定</span></span><br><span class="line">                    <span class="built_in">int</span> sum = nums[i] + nums[j] + nums[left] + nums[right];</span><br><span class="line">                    <span class="keyword">if</span>(sum &lt; target)</span><br><span class="line">                    &#123;</span><br><span class="line">                        left++;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span> <span class="keyword">if</span>(sum &gt; target)&#123;</span><br><span class="line">                        right--;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span>&#123;</span><br><span class="line"></span><br><span class="line">                        result.Add(<span class="keyword">new</span> List&lt;<span class="built_in">int</span>&gt;&#123;nums[i],nums[j],nums[left],nums[right]&#125;);</span><br><span class="line">                        <span class="comment">//去除重复 这里去重要重复遍历 因为多套了一层循环</span></span><br><span class="line">                        <span class="keyword">while</span>(left &lt; right &amp;&amp; nums[left] == nums[left+<span class="number">1</span>])</span><br><span class="line">                            left++;</span><br><span class="line">                        <span class="keyword">while</span>(left &lt; right &amp;&amp; nums[right] == nums[right<span class="number">-1</span>])</span><br><span class="line">                            right--;</span><br><span class="line"></span><br><span class="line">                        left++;</span><br><span class="line">                        right--;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>这类题目对于双指针法的锻炼还是挺有效果的，在实际项目中，可以理解 如何将复杂度 n^2 的算法 降低一层 </p>
+
+            </div>
+
+            <!-- Post information -->
+            
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 post-tags">
+        
+            <i class="fas fa-tag" style="vertical-align: middle;font-size: .8rem;"></i>
+            tags:&nbsp;
+            
+            
+        
+            <a href="/tags/算法/">#算法</a>
+        
+    </div>
+
+            
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+        <ul class="pagination d-block text-center">
+            
+                <li class="previous page-item d-inline"><a href="/2024/04/19/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="page-link float-left">&larr;  下一页</a></li>
+            
+            
+                <li class="next page-item d-inline"><a href="/2024/04/18/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0-%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C/" class="page-link float-right">上一页  &rarr;</a></li>
+            
+        </ul>
+    </div>
+
+
+            
+                <!-- Comments -->
+                
+    
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+        <div id="gitalk-container"></div>
+    </div>
+
+    <script>
+        let gitalk = new Gitalk({
+            clientID: 'eaea798f9d267dfb0596',
+            clientSecret: '8610f0efff4d6df738a96c44273f97fa91861414',
+            repo: 'ChesTnuts233.github.io',
+            owner: 'ChesTnuts233',
+            admin: "ChesTnuts233",
+            id: '2024-04-19 00:10:49',
+            title: '算法笔记-四数之和',
+            distractionFreeMode: false  // Facebook-like distraction free mode
+        });
+        gitalk.render('gitalk-container');
+    </script>
+
+
+                
+
+            
+
+        </div>
+    </div>
+</article> 
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    <style>
+        #toc-content .toc-link::before {
+            background-color: transparent;
+            max-height: 25px;
+        }
+
+        #toc-content .toc-link.is-active-link::before {
+            background-color: #404040;
+        }
+    </style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <div class="ui-toc dropup scrollspy-body pull-right" style="right: 3%;">
+        <button type="button" class="toc-btn btn btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+            <i class="fas fa-list"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right p-2"  aria-labelledby="tocLabel">
+            <div class="toc-widget">
+                <div id="toc-content" class="text-truncate">
+                </div>
+            </div>
+            <div class="toc-menu pt-3 pl-4">
+                <a class="expand-toggle d-block py-1" href="#"><span class="expand-text">全部展开</span><span class="close-text" style="display: none;">全部收起</span></a>
+                <a class="back-to-top d-block py-1" href="#">回到顶部</a>
+                <a class="go-to-bottom d-block py-1" href="#">移至底部</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '#toc-content',
+            // Where to grab the headings to build the table of contents.
+            contentSelector: 'article',
+            // Which headings to grab inside of the contentSelector element.
+            headingSelector: 'h1, h2, h3',
+            // For headings inside relative or absolute positioned containers within content.
+            hasInnerContainers: true,
+        });
+    </script>
+
+
+    
+
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 text-center">
+                <ul class="list-inline">
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <ul class="copyright footer-menu list-inline">
+                    
+                    
+                        <li class="list-inline-item">
+                            
+                            
+                            <a href="/">
+                                
+                                    Home
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/archives">
+                                
+                                    Archives
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/tags">
+                                
+                                    Tags
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/categories">
+                                
+                                    Categories
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/about">
+                                
+                                    About
+                                
+                            </a>
+                        </li>
+                    
+                </ul>
+                <p class="copyright footer-author">
+                    &copy; -2024 
+                    <a rel="external" class="copyright-link" href="" target="_blank">Koo</a><br/>
+                    Powered by <a rel="external" class="copyright-link" href="https://hexo.io/" target="_blank">Hexo</a>  
+                    <span class="copyright-split">&nbsp;|&nbsp;&nbsp;</span>
+                    Theme <a rel="external" class="copyright-link" href="https://github.com/luswdev/hexo-theme-clean.git" target="_blank">Clean</a>
+                    
+                        <br/>
+                        <span id="busuanzi_container_site_pv">
+                            <i class="fas fa-eye"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;
+                        </span>
+                    
+                    
+                        <span id="busuanzi_container_site_uv">
+                            <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            <i class="fas fa-user-friends"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>&nbsp;
+                        </span>
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    <!-- jQuery -->
+<script src="//cdn.jsdelivr.net/npm/jquery@2.1.4/dist/jquery.min.js"></script>
+
+<!-- For drop down -->
+<script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
+<!-- Gallery -->
+<script src="//cdn.jsdelivr.net/npm/lightgallery@1.6.11/dist/js/lightgallery-all.min.js"></script>
+<!-- Busuanzi -->
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<!-- Search script -->
+
+<script src="/js/search.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        searchFunc( '/search.xml' , 'searchInput', 'searchResult');
+    });
+</script>
+
+
+
+<script src="/js/main.js"></script>
+
+
+
+    <!-- Search Modal -->
+    <!-- Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+        <div class="modal-content overflow-auto">
+            <div class="modal-header">
+                <input type="text" class="form-control" placeholder="搜索关键词..." id="searchInput">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div id="searchResult">
+                    <div class="search-empty text-center text-muted p-5">
+                        <i class="far fa-meh"></i>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

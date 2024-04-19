@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<!--Description-->
+
+
+
+    <meta name="description" content="移除元素
+前言： 简单题暴打我 3年后归来还是被直接KO 我还真是算法白痴 有人愿意花3小时学算法 但我宁愿花三小时玩博客 真是丢西瓜。。。
+
+题目：
+给你一个数组 nums 和一个值 val，你需要 原地 移除所有数值等于 val 的元素，并返回移除后数组的新长度。
+不要使用额外的数组空间，你必须"/>
+
+
+<!--Author-->
+
+    <meta name="author" content="Koo"/>
+
+
+<!--Open Graph Title-->
+
+    <meta property="og:title" content="算法笔记-移除元素"/>
+
+
+<!--Open Graph Description-->
+
+    <meta property="og:description" content="移除元素
+前言： 简单题暴打我 3年后归来还是被直接KO 我还真是算法白痴 有人愿意花3小时学算法 但我宁愿花三小时玩博客 真是丢西瓜。。。
+
+题目：
+给你一个数组 nums 和一个值 val，你需要 原地 移除所有数值等于 val 的元素，并返回移除后数组的新长度。
+不要使用额外的数组空间，你必须"/>
+
+
+<!--Open Graph Site Name-->
+    <meta property="og:site_name" content="你好 这里是Koo"/>
+
+<!--Type page-->
+
+    <meta property="og:type" content="article"/>
+
+
+<!--Page Cover-->
+
+
+    <meta property="og:image" content="http://example.com/img/home-bg.jpg"/>
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+
+
+
+
+    <meta name="twitter:image" content="http://example.com/img/home-bg.jpg"/>
+
+
+<!-- Title -->
+
+<title>算法笔记-移除元素 | 你好 这里是Koo</title>
+
+<!-- Bootstrap Core CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+
+<!-- Custom CSS -->
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<!-- Custom Fonts -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.0/css/all.min.css" />
+<link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.0/css/all.min.css" />
+<link href="//fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- Gallery -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/featherlight@1.4.0/src/featherlight.css" integrity="sha256-30DV/STftlyQ6v8yaOWlabammvCYtRJERLj/m0b3zno=" crossorigin="anonymous">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/lightgallery@1.6.11/dist/css/lightgallery.min.css">
+
+<!-- favicon -->
+
+<link rel="icon" href="/img/favicon.png"/>
+
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+<!-- Head tag -->
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top bg-transparent position-absolute w-100 p-0" id="nav">
+    <div class="container pl-0 pr-0">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <a class="navbar-brand text-white p-1 pl-3" href="/">主页</a>
+        </div>
+        <div class="navbar-nav float-right">
+            <button class="btn btn-link search-btn navbar-item" data-toggle="modal" data-target="#searchModal">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 text-center">
+                <div class="post-heading text-white">
+                    <h1>算法笔记-移除元素</h1>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Main Content -->
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                
+                    <span class="meta d-inline-block">
+    
+    
+    <!-- Date -->
+    
+        <span class="post-meta-split">&nbsp;|&nbsp;</span>
+        <i class="far fa-calendar-check fa-fw"></i>
+        2024-04-05
+    
+    <!-- word count and read count -->
+    
+
+    
+
+    
+        <span class="post-meta-split">&nbsp;|&nbsp;</span>
+        <i class="far fa-eye fa-fw"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    
+</span>  
+                
+                <h1 id="移除元素"><a href="#移除元素" class="headerlink" title="移除元素"></a>移除元素</h1><blockquote>
+<p>前言： 简单题暴打我 3年后归来还是被直接KO 我还真是算法白痴 有人愿意花3小时学算法 但我宁愿花三小时玩博客 真是丢西瓜。。。</p>
+</blockquote>
+<h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><blockquote>
+<p>给你一个数组 <code>nums</code> 和一个值 <code>val</code>，你需要 <strong><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95">原地</a></strong> 移除所有数值等于 <code>val</code> 的元素，并返回移除后数组的新长度。</p>
+<p>不要使用额外的数组空间，你必须仅使用 <code>O(1)</code> 额外空间并 <strong><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95">原地 </a>修改输入数组</strong>。</p>
+<p>元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。</p>
+<p><strong>说明:</strong></p>
+<p>为什么返回数值是整数，但输出的答案是数组呢?</p>
+<p>请注意，输入数组是以<strong>「引用」</strong>方式传递的，这意味着在函数里修改输入数组对于调用者是可见的。</p>
+<p>你可以想象内部操作如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// nums 是以“引用”方式传递的。也就是说，不对实参作任何拷贝</span><br><span class="line">int len = removeElement(nums, val);</span><br><span class="line"></span><br><span class="line">// 在函数里修改输入数组对于调用者是可见的。</span><br><span class="line">// 根据你的函数返回的长度, 它会打印出数组中 该长度范围内 的所有元素。</span><br><span class="line">for (int i = 0; i &lt; len; i++) &#123;</span><br><span class="line">    print(nums[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [3,2,2,3], val = 3</span><br><span class="line">输出：2, nums = [2,2]</span><br><span class="line">解释：函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。你不需要考虑数组中超出新长度后面的元素。例如，函数返回的新长度为 2 ，而 nums = [2,2,3,3] 或 nums = [2,2,0,0]，也会被视作正确答案。</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：nums = [0,1,2,2,3,0,4,2], val = 2</span><br><span class="line">输出：5, nums = [0,1,3,0,4]</span><br><span class="line">解释：函数应该返回新的长度 5, 并且 nums 中的前五个元素为 0, 1, 3, 0, 4。注意这五个元素可为任意顺序。你不需要考虑数组中超出新长度后面的元素。</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>0 &lt;= nums.length &lt;= 100</code></li>
+<li><code>0 &lt;= nums[i] &lt;= 50</code></li>
+<li><code>0 &lt;= val &lt;= 100</code></li>
+</ul>
+</blockquote>
+<h3 id="题解过程"><a href="#题解过程" class="headerlink" title="题解过程"></a>题解过程</h3><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">int</span> <span class="title">RemoveElement</span>(<span class="params"><span class="built_in">int</span>[] nums, <span class="built_in">int</span> val</span>)</span> &#123;</span><br><span class="line">        <span class="comment">//这是两次遍历的暴力解法 </span></span><br><span class="line">        <span class="comment">// int size = nums.Length;</span></span><br><span class="line">        <span class="comment">// for(int i = 0;i&lt;size;i++)&#123;</span></span><br><span class="line">        <span class="comment">//     if(nums[i] == val)&#123;</span></span><br><span class="line">        <span class="comment">//         //后面都往前移动</span></span><br><span class="line">        <span class="comment">//         for(int j = i+1;j&lt;size;j++)&#123;</span></span><br><span class="line">        <span class="comment">//             nums[j-1] = nums[j];</span></span><br><span class="line">        <span class="comment">//         &#125;</span></span><br><span class="line">        <span class="comment">//         i--;  //我失败就失败在又漏了i-- 数组变化了 你i不变化？ </span></span><br><span class="line">        <span class="comment">//         size--; </span></span><br><span class="line">        <span class="comment">//     &#125;</span></span><br><span class="line">        <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// return size;</span></span><br><span class="line">       </span><br><span class="line">        <span class="comment">//快慢指针法 这里是答案写法 我写的烂透了 这里写的真精简啊..</span></span><br><span class="line">        <span class="built_in">int</span> slowPoint = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> fastPoint=<span class="number">0</span>;fastPoint&lt;nums.Length;fastPoint++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[fastPoint] != val)&#123;</span><br><span class="line">                nums[slowPoint++] = nums[fastPoint];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> slowPoint;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h2><p>简单的说 就是 数组是不能删掉的  数组内的元素都是覆盖的 大概内部有个计数器用来标记长度 加加减减</p>
+<h3 id="快慢指针法"><a href="#快慢指针法" class="headerlink" title="快慢指针法"></a>快慢指针法</h3><blockquote>
+<p>快慢指针通常用来解决这些问题：</p>
+<ol>
+<li>判断链表是否有环：快指针以比慢指针更快的速度遍历链表，如果链表中有环，快指针最终会追上慢指针，从而发现环的存在。</li>
+<li>寻找链表的中间节点：慢指针每次移动一步，快指针每次移动两步，当快指针到达链表末尾时，慢指针指向的节点即为中间节点。</li>
+</ol>
+</blockquote>
+<p>也许能在实践中用到？  但<code>LinkList</code>这种结构都使用极少……</p>
+
+            </div>
+
+            <!-- Post information -->
+            
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 post-tags">
+        
+            <i class="fas fa-tag" style="vertical-align: middle;font-size: .8rem;"></i>
+            tags:&nbsp;
+            
+            
+        
+            <a href="/tags/算法/">#算法</a>
+        
+    </div>
+
+            
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+        <ul class="pagination d-block text-center">
+            
+                <li class="previous page-item d-inline"><a href="/2024/04/05/Unity%E8%8A%82%E7%82%B9%E7%BC%96%E8%BE%91%E5%99%A8%E5%88%B6%E4%BD%9C%E7%9A%84%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/" class="page-link float-left">&larr;  下一页</a></li>
+            
+            
+                <li class="next page-item d-inline"><a href="/2024/04/05/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/" class="page-link float-right">上一页  &rarr;</a></li>
+            
+        </ul>
+    </div>
+
+
+            
+                <!-- Comments -->
+                
+    
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+        <div id="gitalk-container"></div>
+    </div>
+
+    <script>
+        let gitalk = new Gitalk({
+            clientID: 'eaea798f9d267dfb0596',
+            clientSecret: '8610f0efff4d6df738a96c44273f97fa91861414',
+            repo: 'ChesTnuts233.github.io',
+            owner: 'ChesTnuts233',
+            admin: "ChesTnuts233",
+            id: '2024-04-05 02:47:56',
+            title: '算法笔记-移除元素',
+            distractionFreeMode: false  // Facebook-like distraction free mode
+        });
+        gitalk.render('gitalk-container');
+    </script>
+
+
+                
+
+            
+
+        </div>
+    </div>
+</article> 
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    <style>
+        #toc-content .toc-link::before {
+            background-color: transparent;
+            max-height: 25px;
+        }
+
+        #toc-content .toc-link.is-active-link::before {
+            background-color: #404040;
+        }
+    </style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <div class="ui-toc dropup scrollspy-body pull-right" style="right: 3%;">
+        <button type="button" class="toc-btn btn btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+            <i class="fas fa-list"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right p-2"  aria-labelledby="tocLabel">
+            <div class="toc-widget">
+                <div id="toc-content" class="text-truncate">
+                </div>
+            </div>
+            <div class="toc-menu pt-3 pl-4">
+                <a class="expand-toggle d-block py-1" href="#"><span class="expand-text">全部展开</span><span class="close-text" style="display: none;">全部收起</span></a>
+                <a class="back-to-top d-block py-1" href="#">回到顶部</a>
+                <a class="go-to-bottom d-block py-1" href="#">移至底部</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '#toc-content',
+            // Where to grab the headings to build the table of contents.
+            contentSelector: 'article',
+            // Which headings to grab inside of the contentSelector element.
+            headingSelector: 'h1, h2, h3',
+            // For headings inside relative or absolute positioned containers within content.
+            hasInnerContainers: true,
+        });
+    </script>
+
+
+    
+
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 text-center">
+                <ul class="list-inline">
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <ul class="copyright footer-menu list-inline">
+                    
+                    
+                        <li class="list-inline-item">
+                            
+                            
+                            <a href="/">
+                                
+                                    Home
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/archives">
+                                
+                                    Archives
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/tags">
+                                
+                                    Tags
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/categories">
+                                
+                                    Categories
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/about">
+                                
+                                    About
+                                
+                            </a>
+                        </li>
+                    
+                </ul>
+                <p class="copyright footer-author">
+                    &copy; -2024 
+                    <a rel="external" class="copyright-link" href="" target="_blank">Koo</a><br/>
+                    Powered by <a rel="external" class="copyright-link" href="https://hexo.io/" target="_blank">Hexo</a>  
+                    <span class="copyright-split">&nbsp;|&nbsp;&nbsp;</span>
+                    Theme <a rel="external" class="copyright-link" href="https://github.com/luswdev/hexo-theme-clean.git" target="_blank">Clean</a>
+                    
+                        <br/>
+                        <span id="busuanzi_container_site_pv">
+                            <i class="fas fa-eye"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;
+                        </span>
+                    
+                    
+                        <span id="busuanzi_container_site_uv">
+                            <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            <i class="fas fa-user-friends"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>&nbsp;
+                        </span>
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    <!-- jQuery -->
+<script src="//cdn.jsdelivr.net/npm/jquery@2.1.4/dist/jquery.min.js"></script>
+
+<!-- For drop down -->
+<script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
+<!-- Gallery -->
+<script src="//cdn.jsdelivr.net/npm/lightgallery@1.6.11/dist/js/lightgallery-all.min.js"></script>
+<!-- Busuanzi -->
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<!-- Search script -->
+
+<script src="/js/search.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        searchFunc( '/search.xml' , 'searchInput', 'searchResult');
+    });
+</script>
+
+
+
+<script src="/js/main.js"></script>
+
+
+
+    <!-- Search Modal -->
+    <!-- Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+        <div class="modal-content overflow-auto">
+            <div class="modal-header">
+                <input type="text" class="form-control" placeholder="搜索关键词..." id="searchInput">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div id="searchResult">
+                    <div class="search-empty text-center text-muted p-5">
+                        <i class="far fa-meh"></i>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
