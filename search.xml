@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>值类型与引用类型</title>
+      <link href="/2024/05/01/%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/"/>
+      <url>/2024/05/01/%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/</url>
+      
+        <content type="html"><![CDATA[<h1 id="值类型与引用类型"><a href="#值类型与引用类型" class="headerlink" title="值类型与引用类型"></a>值类型与引用类型</h1><blockquote><p>前言 : 值类型与引用类型可以说是基础中的基础了，慢慢挖掘这里面的东西，其实又是非常复杂繁琐的。所以，慢慢来吧。</p></blockquote><h2 id="什么是值类型"><a href="#什么是值类型" class="headerlink" title="什么是值类型"></a>什么是值类型</h2><p>值类型：值类型包含了所有简单类型（整数、浮点、bool、char)，struct, enum。</p><p>它们都继承自System.ValueType；</p><h2 id="什么是引用类型"><a href="#什么是引用类型" class="headerlink" title="什么是引用类型"></a>什么是引用类型</h2><p>引用类型包含了string（值得一提的是string被C#封装的非常像值类型）object,class,interface,delegate,array</p><p>它们都继承自System.Object</p><h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><h3 id="在内存区域上的区别"><a href="#在内存区域上的区别" class="headerlink" title="在内存区域上的区别"></a>在内存区域上的区别</h3><p>值类型数据存储在栈上，超出作用域就会自动清理 作用域换句话说也就是大括号内（生命周期内）这意味着值类型的变量在其声明的代码块结束的时候就会被自动清理。</p><p>引用类型则存储在托管堆上，引用地址在线程栈上，地址指向数据存放的堆上。</p><ul><li>在托管堆上分配内存空间，用于存储对象的实际数据。</li><li>在线程栈上存储引用，这些引用指向托管堆上的对象。</li></ul><p>托管堆是由GC来自动释放，线程栈数据在作用域结束后会被清理，意思是：一旦引用类型的变量超出了其作用域（比如离开了方法、循环或条件语句的范围），它们在线程栈上的引用也会被清理。这意味着该对象的引用计数会减少，如果没有其他地方引用该对象，GC 可以将其内存空间释放。</p><h3 id="在拷贝策略上的区别"><a href="#在拷贝策略上的区别" class="headerlink" title="在拷贝策略上的区别"></a>在拷贝策略上的区别</h3><ul><li>值类型是拷贝数据</li><li>引用类型是拷贝引用地址</li></ul><p>如果值类型为传值参数，传值参数会在栈上新开辟一个副本，原先的值类型数据不会改变</p><p>如果引用类型是传值参数，传值参数会创建一个新的引用地址，两个引用地址会指向同一个对象实例的数据，实例数据会随着改变进行改变。（这种行为被称为引用的副作用）</p><p>这意味着，在方法内部对对象实例的修改会影响到原始对象，因为它们指向同一个内存地址的数据。</p><p>这种行为有时会带来混淆和意外的结果，因为在方法内部对传递的引用类型进行修改会影响到原始对象，可能违反了一些设计原则或者导致意外的副作用。</p><p>为了避免这种情况，一般实际项目中会采取以下措施：</p><ol><li><strong>使用返回值</strong>：将需要修改的对象作为返回值返回，而不是通过传值参数进行修改。</li><li><strong>使用 <code>ref</code> 或 <code>out</code> 修饰符</strong>：这些修饰符可以使方法接受引用类型参数的引用，而不是值的副本。通过这种方式，方法内部对参数的修改会直接影响到原始对象。</li><li><strong>清晰的代码规范</strong>：在编写代码时，要明确传递参数的方式，以避免意外的副作用。</li></ol><p>通常来说，变量的值分配与其声明该变量的位置密切相关，局部变量的值总是在栈上。实例变量的值则和实例本身一起存储在实例存储的地方。引用类型实例和静态总是储存在堆上的。</p><ul><li>数组的元素，引用类型中的值类型字段等。引用类型总是分配在托管堆上</li><li>但是，值类型并非总是分配在线程栈上。也有可能分配在堆上</li></ul><h2 id="拆箱与装箱"><a href="#拆箱与装箱" class="headerlink" title="拆箱与装箱"></a>拆箱与装箱</h2><p>拆箱与装箱实质上是指 值类型和引用类型互相转换</p><h4 id="装箱和拆箱的区别"><a href="#装箱和拆箱的区别" class="headerlink" title="装箱和拆箱的区别"></a>装箱和拆箱的区别</h4><p>装箱： 值类型 转换到 引用类型object</p><pre><code>1. 分配内存堆  （空间分配）1. 值类型数据拷贝到新的内存堆中 （转移数据）1. 栈中分配一个新的引用 （分配引用）</code></pre><p>拆箱：引用类型object 转换为 值类型</p><pre><code>1. 检查确保对象是给定值类型的一个装箱值 （检查是否由值变化而来）1. 将该值数据复制到栈中的值类型 （转移数据）</code></pre><p>string是特殊的引用类型，如果传入参数是string，在方法里修改，原string数值不变。</p><p>这里也是C#内部做了特殊处理 让 string变的很像值类型的一点 具有不变性 </p><p><a href="https://www.bilibili.com/video/BV1wx411K7rb?p=18">B站刘铁猛C#入门精要</a></p><h4 id=""><a href="#" class="headerlink" title=""></a></h4><p>PS： 值类型和引用类型的最终基类都是Object 具体看以下继承关系</p><p><div class="img-item" data-src="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/types/media/index/value-reference-types-common-type-system.png" data-sub-html=".caption"><img src="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/types/media/index/value-reference-types-common-type-system.png" alt="屏幕截图显示了 CTS 值类型和引用类型。"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">屏幕截图显示了 CTS 值类型和引用类型。</span></div></div></p><h4 id="-1"><a href="#-1" class="headerlink" title=""></a></h4><h4 id="如何避免重复拆装箱"><a href="#如何避免重复拆装箱" class="headerlink" title="如何避免重复拆装箱"></a>如何避免重复拆装箱</h4><ol><li><p>重载 </p><ul><li><p>通过重载方法，可以为不同的参数类型提供不同的实现，从而避免拆装箱。例如，如果有两个重载的方法，一个接受 <code>int</code> 类型的参数，另一个接受 <code>object</code> 类型的参数，那么传递 <code>int</code> 类型的参数将调用第一个方法，而不会进行拆箱操作。</p></li><li><p>重载的方法示例：</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ProcessValue</span>(<span class="params"><span class="built_in">int</span> <span class="keyword">value</span></span>)</span> &#123; <span class="comment">/* 处理 int 类型参数的逻辑 */</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ProcessValue</span>(<span class="params"><span class="built_in">object</span> <span class="keyword">value</span></span>)</span> &#123; <span class="comment">/* 处理 object 类型参数的逻辑 */</span> &#125;</span><br></pre></td></tr></table></figure></li><li><p>在使用重载方法时，确保在需要时提供适当的重载，以避免不必要的拆装箱操作。</p></li></ul></li><li><p>泛型</p><ul><li><p>泛型方法在编译时就要确定好参数类型，从而避免了运行时的类型转换。</p></li><li><p>比如 可以编写一个泛型方法来处理不同类型的参数，而不必将参数转换为object类型，避免装箱</p><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ProcessValue</span>&lt;<span class="title">T</span>&gt;(<span class="params">T <span class="keyword">value</span></span>)</span> &#123; <span class="comment">/* 处理泛型类型参数的逻辑 */</span> &#125;</span><br></pre></td></tr></table></figure></li><li><p>使用泛型方法时，编译器会为每种参数类型生成对应的方法实现，因此不会发生拆装箱。</p></li></ul></li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 编程思考 C# </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>什么是面向对象</title>
+      <link href="/2024/05/01/%E4%BB%80%E4%B9%88%E6%98%AF%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+      <url>/2024/05/01/%E4%BB%80%E4%B9%88%E6%98%AF%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</url>
+      
+        <content type="html"><![CDATA[<h1 id="什么是面向对象"><a href="#什么是面向对象" class="headerlink" title="什么是面向对象"></a>什么是面向对象</h1><blockquote><p>前言：学习编程也两三年了，一直说自己是不擅长算法的榆木脑袋，所以一直是在学习设计模式和框架思想,那么这个时候就要在问自己，什么是面向对象，却很容易说不出话来，明明天天与对象打交道。（现实没对象啊……）</p></blockquote><h2 id="为什么要面向对象"><a href="#为什么要面向对象" class="headerlink" title="为什么要面向对象"></a>为什么要面向对象</h2><p>面向对象之前是什么，在这之前编程通常是面向过程的，逻辑由上至下，由前到后，仿佛一条长线。面向对象则不同，面向对象的逻辑似乎被拆分的这里也是，哪里也是。好像似乎更乱了？ 因为把数据和方法组织成了一个整体，所以更有序了吗？有序是相对于人来看待的。 之前我也思考过，把一些相似重复的东西，都放在一起更有序，还是严格的按照面向对象，他是谁的就在谁哪里，这其实是应该根据情况分析的。</p><h2 id="面向对象的三大特性"><a href="#面向对象的三大特性" class="headerlink" title="面向对象的三大特性"></a>面向对象的三大特性</h2><h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p>隐藏对象的属性，并实现细节，对外只提供接口或者API。 （最好的面向对象，则是方法逻辑几乎内聚，对外只提供抽象接口，对象与对象之间只有抽象的联系）</p><blockquote><p>提一嘴</p><p>在C#中 有internal这个权限修饰 ，相比我们熟悉的public protected 和private 这个比较陌生的修饰符起到了什么作用呢。</p><p>如果经常看Unity源码或者是其他不开源的插件源码的话，我们会发现大量的internal 标记为 <code>internal</code> 时，它们只能在同一程序集内的代码中访问，而无法在其他程序集中使用。</p><p>如果我们把程序集的逻辑划分成各个模块的话，<code>internal</code> 的限制就变的很有必要，模块内部的逻辑，不希望外部模块访问到，这样就能避免public这样的API 被外部调用所导致的风险。</p></blockquote><h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>继承是面向对象中反复利用重复代码最有效的方式，因为类与类之间的共同特性，让它们很容易可以抽象出一个共同父类，那他们相似的逻辑，就可以很方便公用它们之间的逻辑。</p><blockquote><p>继承的坏处，在软件开发中，继承是一种强大的工具，但过度使用继承可能导致代码变得难以理解和维护。常听到的口头禅“组合优于继承”强调了一种设计原则，即在某些情况下，将类的功能组合起来比通过继承现有类来实现新功能更为灵活和可维护。</p><p>过度继承会导致继承层次的复杂化，使代码的逻辑难以跟踪和理解。当一个类不断地继承其他类，并且每个子类都在不断地添加或重写父类的方法时，就会形成一种“继承的泥潭”，使得代码逻辑变得模糊和分散。这样的设计也使得子类与父类之间的关系过于紧密，难以进行灵活的扩展和修改。</p><p>相比之下，组合模式通过将类的功能拆分成更小的组件，并在需要时将这些组件组合起来，可以使代码更加灵活、清晰和可维护。例如，考虑鸟类和飞行动物的关系，使用组合模式可以将鸟类的飞行行为作为一个独立的组件，而不是让所有鸟类都继承具有飞行行为的父类。这样做的好处是，不同类型的鸟类可以选择性地使用飞行行为组件，而不受继承关系的限制。组合模式可以帮助避免继承层次的过度复杂化，提高代码的可维护性和灵活性。在设计软件时，需要根据具体情况选择合适的设计模式，以确保代码结构清晰、逻辑简洁</p></blockquote><h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><p>多态其实体现在继承之上，简单的说就是 父类的行为由子类具体实现，父类很多时候只负责了抽象，其中多态的具体实现有 virtual 虚方法 abstract 抽象方法 还有必不可少的interface 接口！</p><h4 id="静态多态—重载"><a href="#静态多态—重载" class="headerlink" title="静态多态—重载"></a>静态多态—重载</h4><p>静态重载都是在编译阶段就处理完成，比如运算符的重载，这通常都是我们对于具体需求所进行的业务拓展。让原本的功能更加多样化。更方便我们维护项目。</p><h4 id="动态多态—重写"><a href="#动态多态—重写" class="headerlink" title="动态多态—重写"></a>动态多态—重写</h4><p>重写一般体现为override 这是运行时，修改了方法表的新地址，比如父类的同名方法，变动到子类来实现。举例比如我们实现Mono单例时，经常在单例父类中的Awake写单例的唯一性赋值。我们单例管理器子类继承这个单例父类，很多时候会发现；诶？为啥子类单例不起效，其实是子类没有重写父类的Awake方法，可能直接new了，可能之前的Aawke没改成重写。<strong>子类重写了 如果不调用base， 父类的同名方法是不会被调用的</strong></p><p>要注意的是 抽象方法的父类必须是抽象类，子类是抽象类可以不重写，抽象类不能被实例化</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> C# 编程思考 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>算法笔记-队列模拟栈</title>
       <link href="/2024/05/01/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97%E6%A8%A1%E6%8B%9F%E6%A0%88/"/>
       <url>/2024/05/01/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97%E6%A8%A1%E6%8B%9F%E6%A0%88/</url>

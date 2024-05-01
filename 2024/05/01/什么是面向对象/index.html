@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<!--Description-->
+
+
+
+    <meta name="description" content="什么是面向对象
+前言：学习编程也两三年了，一直说自己是不擅长算法的榆木脑袋，所以一直是在学习设计模式和框架思想,那么这个时候就要在问自己，什么是面向对象，却很容易说不出话来，明明天天与对象打交道。（现实没对象啊……）
+
+为什么要面向对象面向对象之前是什么，在这之前编程通常是面向过程的，逻辑由上至下，"/>
+
+
+<!--Author-->
+
+    <meta name="author" content="Koo"/>
+
+
+<!--Open Graph Title-->
+
+    <meta property="og:title" content="什么是面向对象"/>
+
+
+<!--Open Graph Description-->
+
+    <meta property="og:description" content="什么是面向对象
+前言：学习编程也两三年了，一直说自己是不擅长算法的榆木脑袋，所以一直是在学习设计模式和框架思想,那么这个时候就要在问自己，什么是面向对象，却很容易说不出话来，明明天天与对象打交道。（现实没对象啊……）
+
+为什么要面向对象面向对象之前是什么，在这之前编程通常是面向过程的，逻辑由上至下，"/>
+
+
+<!--Open Graph Site Name-->
+    <meta property="og:site_name" content="你好 这里是Koo"/>
+
+<!--Type page-->
+
+    <meta property="og:type" content="article"/>
+
+
+<!--Page Cover-->
+
+
+    <meta property="og:image" content="http://example.com/img/home-bg.jpg"/>
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+
+
+
+
+    <meta name="twitter:image" content="http://example.com/img/home-bg.jpg"/>
+
+
+<!-- Title -->
+
+<title>什么是面向对象 | 你好 这里是Koo</title>
+
+<!-- Bootstrap Core CSS -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+
+<!-- Custom CSS -->
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<!-- Custom Fonts -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.0/css/all.min.css" />
+<link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.0/css/all.min.css" />
+<link href="//fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"/>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- Gallery -->
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/featherlight@1.4.0/src/featherlight.css" integrity="sha256-30DV/STftlyQ6v8yaOWlabammvCYtRJERLj/m0b3zno=" crossorigin="anonymous">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/lightgallery@1.6.11/dist/css/lightgallery.min.css">
+
+<!-- favicon -->
+
+<link rel="icon" href="/img/favicon.png"/>
+
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+<!-- Head tag -->
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top bg-transparent position-absolute w-100 p-0" id="nav">
+    <div class="container pl-0 pr-0">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <a class="navbar-brand text-white p-1 pl-3" href="/">主页</a>
+        </div>
+        <div class="navbar-nav float-right">
+            <button class="btn btn-link search-btn navbar-item" data-toggle="modal" data-target="#searchModal">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 text-center">
+                <div class="post-heading text-white">
+                    <h1>什么是面向对象</h1>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Post Main Content -->
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+                
+                    <span class="meta d-inline-block">
+    
+    
+    <!-- Date -->
+    
+        <span class="post-meta-split">&nbsp;|&nbsp;</span>
+        <i class="far fa-calendar-check fa-fw"></i>
+        2024-05-01
+    
+    <!-- word count and read count -->
+    
+
+    
+
+    
+        <span class="post-meta-split">&nbsp;|&nbsp;</span>
+        <i class="far fa-eye fa-fw"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    
+</span>  
+                
+                <h1 id="什么是面向对象"><a href="#什么是面向对象" class="headerlink" title="什么是面向对象"></a>什么是面向对象</h1><blockquote>
+<p>前言：学习编程也两三年了，一直说自己是不擅长算法的榆木脑袋，所以一直是在学习设计模式和框架思想,那么这个时候就要在问自己，什么是面向对象，却很容易说不出话来，明明天天与对象打交道。（现实没对象啊……）</p>
+</blockquote>
+<h2 id="为什么要面向对象"><a href="#为什么要面向对象" class="headerlink" title="为什么要面向对象"></a>为什么要面向对象</h2><p>面向对象之前是什么，在这之前编程通常是面向过程的，逻辑由上至下，由前到后，仿佛一条长线。面向对象则不同，面向对象的逻辑似乎被拆分的这里也是，哪里也是。好像似乎更乱了？ 因为把数据和方法组织成了一个整体，所以更有序了吗？有序是相对于人来看待的。 之前我也思考过，把一些相似重复的东西，都放在一起更有序，还是严格的按照面向对象，他是谁的就在谁哪里，这其实是应该根据情况分析的。</p>
+<h2 id="面向对象的三大特性"><a href="#面向对象的三大特性" class="headerlink" title="面向对象的三大特性"></a>面向对象的三大特性</h2><h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p>隐藏对象的属性，并实现细节，对外只提供接口或者API。 （最好的面向对象，则是方法逻辑几乎内聚，对外只提供抽象接口，对象与对象之间只有抽象的联系）</p>
+<blockquote>
+<p>提一嘴</p>
+<p>在C#中 有internal这个权限修饰 ，相比我们熟悉的public protected 和private 这个比较陌生的修饰符起到了什么作用呢。</p>
+<p>如果经常看Unity源码或者是其他不开源的插件源码的话，我们会发现大量的internal 标记为 <code>internal</code> 时，它们只能在同一程序集内的代码中访问，而无法在其他程序集中使用。</p>
+<p>如果我们把程序集的逻辑划分成各个模块的话，<code>internal</code> 的限制就变的很有必要，模块内部的逻辑，不希望外部模块访问到，这样就能避免public这样的API 被外部调用所导致的风险。</p>
+</blockquote>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>继承是面向对象中反复利用重复代码最有效的方式，因为类与类之间的共同特性，让它们很容易可以抽象出一个共同父类，那他们相似的逻辑，就可以很方便公用它们之间的逻辑。</p>
+<blockquote>
+<p>继承的坏处，在软件开发中，继承是一种强大的工具，但过度使用继承可能导致代码变得难以理解和维护。常听到的口头禅“组合优于继承”强调了一种设计原则，即在某些情况下，将类的功能组合起来比通过继承现有类来实现新功能更为灵活和可维护。</p>
+<p>过度继承会导致继承层次的复杂化，使代码的逻辑难以跟踪和理解。当一个类不断地继承其他类，并且每个子类都在不断地添加或重写父类的方法时，就会形成一种“继承的泥潭”，使得代码逻辑变得模糊和分散。这样的设计也使得子类与父类之间的关系过于紧密，难以进行灵活的扩展和修改。</p>
+<p>相比之下，组合模式通过将类的功能拆分成更小的组件，并在需要时将这些组件组合起来，可以使代码更加灵活、清晰和可维护。例如，考虑鸟类和飞行动物的关系，使用组合模式可以将鸟类的飞行行为作为一个独立的组件，而不是让所有鸟类都继承具有飞行行为的父类。这样做的好处是，不同类型的鸟类可以选择性地使用飞行行为组件，而不受继承关系的限制。组合模式可以帮助避免继承层次的过度复杂化，提高代码的可维护性和灵活性。在设计软件时，需要根据具体情况选择合适的设计模式，以确保代码结构清晰、逻辑简洁</p>
+</blockquote>
+<h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><p>多态其实体现在继承之上，简单的说就是 父类的行为由子类具体实现，父类很多时候只负责了抽象，其中多态的具体实现有 virtual 虚方法 abstract 抽象方法 还有必不可少的interface 接口！</p>
+<h4 id="静态多态—重载"><a href="#静态多态—重载" class="headerlink" title="静态多态—重载"></a>静态多态—重载</h4><p>静态重载都是在编译阶段就处理完成，比如运算符的重载，这通常都是我们对于具体需求所进行的业务拓展。让原本的功能更加多样化。更方便我们维护项目。</p>
+<h4 id="动态多态—重写"><a href="#动态多态—重写" class="headerlink" title="动态多态—重写"></a>动态多态—重写</h4><p>重写一般体现为override 这是运行时，修改了方法表的新地址，比如父类的同名方法，变动到子类来实现。举例比如我们实现Mono单例时，经常在单例父类中的Awake写单例的唯一性赋值。我们单例管理器子类继承这个单例父类，很多时候会发现；诶？为啥子类单例不起效，其实是子类没有重写父类的Awake方法，可能直接new了，可能之前的Aawke没改成重写。<strong>子类重写了 如果不调用base， 父类的同名方法是不会被调用的</strong></p>
+<p>要注意的是 抽象方法的父类必须是抽象类，子类是抽象类可以不重写，抽象类不能被实例化</p>
+
+            </div>
+
+            <!-- Post information -->
+            
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 post-tags">
+        
+            <i class="fas fa-tag" style="vertical-align: middle;font-size: .8rem;"></i>
+            tags:&nbsp;
+            
+            
+        
+            <a href="/tags/C-编程思考/">#C# 编程思考</a>
+        
+    </div>
+
+            
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+        <ul class="pagination d-block text-center">
+            
+                <li class="previous page-item d-inline"><a href="/2024/05/01/%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/" class="page-link float-left">&larr;  下一页</a></li>
+            
+            
+                <li class="next page-item d-inline"><a href="/2024/05/01/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97%E6%A8%A1%E6%8B%9F%E6%A0%88/" class="page-link float-right">上一页  &rarr;</a></li>
+            
+        </ul>
+    </div>
+
+
+            
+                <!-- Comments -->
+                
+    
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    
+    <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
+        <div id="gitalk-container"></div>
+    </div>
+
+    <script>
+        let gitalk = new Gitalk({
+            clientID: 'eaea798f9d267dfb0596',
+            clientSecret: '8610f0efff4d6df738a96c44273f97fa91861414',
+            repo: 'ChesTnuts233.github.io',
+            owner: 'ChesTnuts233',
+            admin: "ChesTnuts233",
+            id: '2024-05-01 21:22:55',
+            title: '什么是面向对象',
+            distractionFreeMode: false  // Facebook-like distraction free mode
+        });
+        gitalk.render('gitalk-container');
+    </script>
+
+
+                
+
+            
+
+        </div>
+    </div>
+</article> 
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css">
+    <style>
+        #toc-content .toc-link::before {
+            background-color: transparent;
+            max-height: 25px;
+        }
+
+        #toc-content .toc-link.is-active-link::before {
+            background-color: #404040;
+        }
+    </style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+    <div class="ui-toc dropup scrollspy-body pull-right" style="right: 3%;">
+        <button type="button" class="toc-btn btn btn-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+            <i class="fas fa-list"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right p-2"  aria-labelledby="tocLabel">
+            <div class="toc-widget">
+                <div id="toc-content" class="text-truncate">
+                </div>
+            </div>
+            <div class="toc-menu pt-3 pl-4">
+                <a class="expand-toggle d-block py-1" href="#"><span class="expand-text">全部展开</span><span class="close-text" style="display: none;">全部收起</span></a>
+                <a class="back-to-top d-block py-1" href="#">回到顶部</a>
+                <a class="go-to-bottom d-block py-1" href="#">移至底部</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        tocbot.init({
+            // Where to render the table of contents.
+            tocSelector: '#toc-content',
+            // Where to grab the headings to build the table of contents.
+            contentSelector: 'article',
+            // Which headings to grab inside of the contentSelector element.
+            headingSelector: 'h1, h2, h3',
+            // For headings inside relative or absolute positioned containers within content.
+            hasInnerContainers: true,
+        });
+    </script>
+
+
+    
+
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1 text-center">
+                <ul class="list-inline">
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <ul class="copyright footer-menu list-inline">
+                    
+                    
+                        <li class="list-inline-item">
+                            
+                            
+                            <a href="/">
+                                
+                                    Home
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/archives">
+                                
+                                    Archives
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/tags/Unity%E6%9E%B6%E6%9E%84">
+                                
+                                    Tags
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/categories">
+                                
+                                    Categories
+                                
+                            </a>
+                        </li>
+                    
+                        <li class="list-inline-item">
+                            
+                                <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            
+                            
+                            <a href="/about">
+                                
+                                    About
+                                
+                            </a>
+                        </li>
+                    
+                </ul>
+                <p class="copyright footer-author">
+                    &copy; -2024 
+                    <a rel="external" class="copyright-link" href="" target="_blank">Koo</a><br/>
+                    Powered by <a rel="external" class="copyright-link" href="https://hexo.io/" target="_blank">Hexo</a>  
+                    <span class="copyright-split">&nbsp;|&nbsp;&nbsp;</span>
+                    Theme <a rel="external" class="copyright-link" href="https://github.com/luswdev/hexo-theme-clean.git" target="_blank">Clean</a>
+                    
+                        <br/>
+                        <span id="busuanzi_container_site_pv">
+                            <i class="fas fa-eye"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_pv"></span>&nbsp;
+                        </span>
+                    
+                    
+                        <span id="busuanzi_container_site_uv">
+                            <span class="copyright-split">&nbsp;|&nbsp;</span>
+                            <i class="fas fa-user-friends"></i>&nbsp;&nbsp;<span id="busuanzi_value_site_uv"></span>&nbsp;
+                        </span>
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    <!-- jQuery -->
+<script src="//cdn.jsdelivr.net/npm/jquery@2.1.4/dist/jquery.min.js"></script>
+
+<!-- For drop down -->
+<script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"></script>
+<!-- Gallery -->
+<script src="//cdn.jsdelivr.net/npm/lightgallery@1.6.11/dist/js/lightgallery-all.min.js"></script>
+<!-- Busuanzi -->
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<!-- Search script -->
+
+<script src="/js/search.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        searchFunc( '/search.xml' , 'searchInput', 'searchResult');
+    });
+</script>
+
+
+
+<script src="/js/main.js"></script>
+
+
+
+    <!-- Search Modal -->
+    <!-- Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+        <div class="modal-content overflow-auto">
+            <div class="modal-header">
+                <input type="text" class="form-control" placeholder="搜索关键词..." id="searchInput">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div id="searchResult">
+                    <div class="search-empty text-center text-muted p-5">
+                        <i class="far fa-meh"></i>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
