@@ -9,12 +9,11 @@
 
 
 
-    <meta name="description" content="值类型与引用类型
-前言 : 值类型与引用类型可以说是基础中的基础了，慢慢挖掘这里面的东西，其实又是非常复杂繁琐的。所以，慢慢来吧。
+    <meta name="description" content="有效的括号
+前言：这题我一眼倒是想复杂了，在实际开发项目中，通常字符中还有其他乱七八糟字符串，这个时候可以用一个List把括号列举一遍。 写法其实就是 左括号的时候 入栈 右括号 搞清楚false的条件就行
 
-什么是值类型值类型：值类型包含了所有简单类型（整数、浮点、bool、char)，struct, enum。
-它们都继承自System.ValueType；
-什么是引用"/>
+题目
+ 给定一个只包括 &amp;#39;(&amp;#39;，&amp;#39;)&amp;#39;，&amp;#39;&amp;#12"/>
 
 
 <!--Author-->
@@ -24,17 +23,16 @@
 
 <!--Open Graph Title-->
 
-    <meta property="og:title" content="值类型与引用类型"/>
+    <meta property="og:title" content="算法笔记-有效的括号"/>
 
 
 <!--Open Graph Description-->
 
-    <meta property="og:description" content="值类型与引用类型
-前言 : 值类型与引用类型可以说是基础中的基础了，慢慢挖掘这里面的东西，其实又是非常复杂繁琐的。所以，慢慢来吧。
+    <meta property="og:description" content="有效的括号
+前言：这题我一眼倒是想复杂了，在实际开发项目中，通常字符中还有其他乱七八糟字符串，这个时候可以用一个List把括号列举一遍。 写法其实就是 左括号的时候 入栈 右括号 搞清楚false的条件就行
 
-什么是值类型值类型：值类型包含了所有简单类型（整数、浮点、bool、char)，struct, enum。
-它们都继承自System.ValueType；
-什么是引用"/>
+题目
+ 给定一个只包括 &amp;#39;(&amp;#39;，&amp;#39;)&amp;#39;，&amp;#39;&amp;#12"/>
 
 
 <!--Open Graph Site Name-->
@@ -61,7 +59,7 @@
 
 <!-- Title -->
 
-<title>值类型与引用类型 | 你好 这里是Koo</title>
+<title>算法笔记-有效的括号 | 你好 这里是Koo</title>
 
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
@@ -130,7 +128,7 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 text-center">
                 <div class="post-heading text-white">
-                    <h1>值类型与引用类型</h1>
+                    <h1>算法笔记-有效的括号</h1>
                     
                 </div>
             </div>
@@ -152,7 +150,7 @@
     
         <span class="post-meta-split">&nbsp;|&nbsp;</span>
         <i class="far fa-calendar-check fa-fw"></i>
-        2024-05-01
+        2024-05-03
     
     <!-- word count and read count -->
     
@@ -166,78 +164,47 @@
     
 </span>  
                 
-                <h1 id="值类型与引用类型"><a href="#值类型与引用类型" class="headerlink" title="值类型与引用类型"></a>值类型与引用类型</h1><blockquote>
-<p>前言 : 值类型与引用类型可以说是基础中的基础了，慢慢挖掘这里面的东西，其实又是非常复杂繁琐的。所以，慢慢来吧。</p>
+                <h1 id="有效的括号"><a href="#有效的括号" class="headerlink" title="有效的括号"></a>有效的括号</h1><blockquote>
+<p>前言：这题我一眼倒是想复杂了，在实际开发项目中，通常字符中还有其他乱七八糟字符串，这个时候可以用一个List把括号列举一遍。 写法其实就是 左括号的时候 入栈 右括号 搞清楚false的条件就行</p>
 </blockquote>
-<h2 id="什么是值类型"><a href="#什么是值类型" class="headerlink" title="什么是值类型"></a>什么是值类型</h2><p>值类型：值类型包含了所有简单类型（整数、浮点、bool、char)，struct, enum。</p>
-<p>它们都继承自System.ValueType；</p>
-<h2 id="什么是引用类型"><a href="#什么是引用类型" class="headerlink" title="什么是引用类型"></a>什么是引用类型</h2><p>引用类型包含了string（值得一提的是string被C#封装的非常像值类型）object,class,interface,delegate,array</p>
-<p>它们都继承自System.Object</p>
-<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><h3 id="在内存区域上的区别"><a href="#在内存区域上的区别" class="headerlink" title="在内存区域上的区别"></a>在内存区域上的区别</h3><p>值类型数据存储在栈上，超出作用域就会自动清理 作用域换句话说也就是大括号内（生命周期内）这意味着值类型的变量在其声明的代码块结束的时候就会被自动清理。</p>
-<p>引用类型则存储在托管堆上，引用地址在线程栈上，地址指向数据存放的堆上。</p>
-<ul>
-<li>在托管堆上分配内存空间，用于存储对象的实际数据。</li>
-<li>在线程栈上存储引用，这些引用指向托管堆上的对象。</li>
-</ul>
-<p>托管堆是由GC来自动释放，线程栈数据在作用域结束后会被清理，意思是：一旦引用类型的变量超出了其作用域（比如离开了方法、循环或条件语句的范围），它们在线程栈上的引用也会被清理。这意味着该对象的引用计数会减少，如果没有其他地方引用该对象，GC 可以将其内存空间释放。</p>
-<h3 id="在拷贝策略上的区别"><a href="#在拷贝策略上的区别" class="headerlink" title="在拷贝策略上的区别"></a>在拷贝策略上的区别</h3><ul>
-<li>值类型是拷贝数据</li>
-<li>引用类型是拷贝引用地址</li>
-</ul>
-<p>如果值类型为传值参数，传值参数会在栈上新开辟一个副本，原先的值类型数据不会改变</p>
-<p>如果引用类型是传值参数，传值参数会创建一个新的引用地址，两个引用地址会指向同一个对象实例的数据，实例数据会随着改变进行改变。（这种行为被称为引用的副作用）</p>
-<p>这意味着，在方法内部对对象实例的修改会影响到原始对象，因为它们指向同一个内存地址的数据。</p>
-<p>这种行为有时会带来混淆和意外的结果，因为在方法内部对传递的引用类型进行修改会影响到原始对象，可能违反了一些设计原则或者导致意外的副作用。</p>
-<p>为了避免这种情况，一般实际项目中会采取以下措施：</p>
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><blockquote>
+<p> 给定一个只包括 <code>&#39;(&#39;</code>，<code>&#39;)&#39;</code>，<code>&#39;&#123;&#39;</code>，<code>&#39;&#125;&#39;</code>，<code>&#39;[&#39;</code>，<code>&#39;]&#39;</code> 的字符串 <code>s</code> ，判断字符串是否有效。</p>
+<p>有效字符串需满足：</p>
 <ol>
-<li><strong>使用返回值</strong>：将需要修改的对象作为返回值返回，而不是通过传值参数进行修改。</li>
-<li><strong>使用 <code>ref</code> 或 <code>out</code> 修饰符</strong>：这些修饰符可以使方法接受引用类型参数的引用，而不是值的副本。通过这种方式，方法内部对参数的修改会直接影响到原始对象。</li>
-<li><strong>清晰的代码规范</strong>：在编写代码时，要明确传递参数的方式，以避免意外的副作用。</li>
+<li>左括号必须用相同类型的右括号闭合。</li>
+<li>左括号必须以正确的顺序闭合。</li>
+<li>每个右括号都有一个对应的相同类型的左括号。</li>
 </ol>
-<p>通常来说，变量的值分配与其声明该变量的位置密切相关，局部变量的值总是在栈上。实例变量的值则和实例本身一起存储在实例存储的地方。引用类型实例和静态总是储存在堆上的。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：s = &quot;()&quot;</span><br><span class="line">输出：true</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：s = &quot;()[]&#123;&#125;&quot;</span><br><span class="line">输出：true</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：s = &quot;(]&quot;</span><br><span class="line">输出：false</span><br></pre></td></tr></table></figure>
+
+<p><strong>提示：</strong></p>
 <ul>
-<li>数组的元素，引用类型中的值类型字段等。引用类型总是分配在托管堆上</li>
-<li>但是，值类型并非总是分配在线程栈上。也有可能分配在堆上</li>
+<li><code>1 &lt;= s.length &lt;= 104</code></li>
+<li><code>s</code> 仅由括号 <code>&#39;()[]&#123;&#125;&#39;</code> 组成</li>
 </ul>
-<h2 id="拆箱与装箱"><a href="#拆箱与装箱" class="headerlink" title="拆箱与装箱"></a>拆箱与装箱</h2><p>拆箱与装箱实质上是指 值类型和引用类型互相转换</p>
-<h4 id="装箱和拆箱的区别"><a href="#装箱和拆箱的区别" class="headerlink" title="装箱和拆箱的区别"></a>装箱和拆箱的区别</h4><p>装箱： 值类型 转换到 引用类型object</p>
-<pre><code>1. 分配内存堆  （空间分配）
-1. 值类型数据拷贝到新的内存堆中 （转移数据）
-1. 栈中分配一个新的引用 （分配引用）
-</code></pre>
-<p>拆箱：引用类型object 转换为 值类型</p>
-<pre><code>1. 检查确保对象是给定值类型的一个装箱值 （检查是否由值变化而来）
-1. 将该值数据复制到栈中的值类型 （转移数据）
-</code></pre>
-<p>string是特殊的引用类型，如果传入参数是string，在方法里修改，原string数值不变。</p>
-<p>这里也是C#内部做了特殊处理 让 string变的很像值类型的一点 具有不变性 </p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1wx411K7rb?p=18">B站刘铁猛C#入门精要</a></p>
-<h4 id=""><a href="#" class="headerlink" title=""></a></h4><p>PS： 值类型和引用类型的最终基类都是Object 具体看以下继承关系</p>
-<p><div class="img-item" data-src="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/types/media/index/value-reference-types-common-type-system.png" data-sub-html=".caption"><img src="https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/types/media/index/value-reference-types-common-type-system.png" alt="屏幕截图显示了 CTS 值类型和引用类型。"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">屏幕截图显示了 CTS 值类型和引用类型。</span></div></div></p>
-<h4 id="-1"><a href="#-1" class="headerlink" title=""></a></h4><h4 id="如何避免重复拆装箱"><a href="#如何避免重复拆装箱" class="headerlink" title="如何避免重复拆装箱"></a>如何避免重复拆装箱</h4><ol>
-<li><p>重载 </p>
-<ul>
-<li><p>通过重载方法，可以为不同的参数类型提供不同的实现，从而避免拆装箱。例如，如果有两个重载的方法，一个接受 <code>int</code> 类型的参数，另一个接受 <code>object</code> 类型的参数，那么传递 <code>int</code> 类型的参数将调用第一个方法，而不会进行拆箱操作。</p>
-</li>
-<li><p>重载的方法示例：</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ProcessValue</span>(<span class="params"><span class="built_in">int</span> <span class="keyword">value</span></span>)</span> &#123; <span class="comment">/* 处理 int 类型参数的逻辑 */</span> &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ProcessValue</span>(<span class="params"><span class="built_in">object</span> <span class="keyword">value</span></span>)</span> &#123; <span class="comment">/* 处理 object 类型参数的逻辑 */</span> &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在使用重载方法时，确保在需要时提供适当的重载，以避免不必要的拆装箱操作。</p>
-</li>
-</ul>
-</li>
-<li><p>泛型</p>
-<ul>
-<li><p>泛型方法在编译时就要确定好参数类型，从而避免了运行时的类型转换。</p>
-</li>
-<li><p>比如 可以编写一个泛型方法来处理不同类型的参数，而不必将参数转换为object类型，避免装箱</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ProcessValue</span>&lt;<span class="title">T</span>&gt;(<span class="params">T <span class="keyword">value</span></span>)</span> &#123; <span class="comment">/* 处理泛型类型参数的逻辑 */</span> &#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>使用泛型方法时，编译器会为每种参数类型生成对应的方法实现，因此不会发生拆装箱。</p>
-</li>
-</ul>
-</li>
-</ol>
+</blockquote>
+<p>三种false情况 </p>
+<p><div class="img-item" data-src="https://code-thinking.cdn.bcebos.com/gifs/20.%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7.gif" data-sub-html=".caption"><img src="https://code-thinking.cdn.bcebos.com/gifs/20.%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7.gif" alt="20.有效括号"><div class="img-caption d-block text-center"><span class="center-caption text-muted border-bottom">20.有效括号</span></div></div></p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">bool</span> <span class="title">IsValid</span>(<span class="params"><span class="built_in">string</span> s</span>)</span> &#123;</span><br><span class="line">        Stack&lt;<span class="built_in">char</span>&gt; charStack = <span class="keyword">new</span>();</span><br><span class="line">        <span class="comment">//List&lt;char&gt; pChars = new()&#123;&#x27;(&#x27;,&#x27;)&#x27;,&#x27;&#123;&#x27;,&#x27;&#125;&#x27;,&#x27;[&#x27;,&#x27;]&#x27;&#125;;</span></span><br><span class="line">    </span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;s.Length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s[i]==<span class="string">&#x27;(&#x27;</span>)&#123;</span><br><span class="line">                charStack.Push(<span class="string">&#x27;)&#x27;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(s[i]==<span class="string">&#x27;&#123;&#x27;</span>)&#123;</span><br><span class="line">                charStack.Push(<span class="string">&#x27;&#125;&#x27;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(s[i]==<span class="string">&#x27;[&#x27;</span>)&#123;</span><br><span class="line">                charStack.Push(<span class="string">&#x27;]&#x27;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//如果还没排查完就栈空 或者 栈顶不符合s[i] false</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(charStack.Count ==<span class="number">0</span> || charStack.Peek() != s[i])&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                charStack.Pop();  <span class="comment">//出栈</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> charStack.Count == <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在实际项目中的有遇到过 找匹配的右大括号的情况 自觉挺想的 这里也提一下</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="built_in">int</span> <span class="title">FindMatchingClosingBrace</span>(<span class="params"><span class="built_in">string</span> text, <span class="built_in">int</span> startIndex</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">            <span class="built_in">int</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (<span class="built_in">int</span> i = startIndex; i &lt; text.Length; i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (text[i] == <span class="string">&#x27;&#123;&#x27;</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    count++;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span> (text[i] == <span class="string">&#x27;&#125;&#x27;</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    count--;</span><br><span class="line">                    <span class="keyword">if</span> (count == <span class="number">0</span>)</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">return</span> i;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>; <span class="comment">// 未找到匹配的右大括号</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
 
             </div>
 
@@ -250,7 +217,7 @@
             
             
         
-            <a href="/tags/C/">#C#</a> <a href="/tags/编程思考/">#编程思考</a>
+            <a href="/tags/算法/">#算法</a>
         
     </div>
 
@@ -258,10 +225,8 @@
     <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
         <ul class="pagination d-block text-center">
             
-                <li class="previous page-item d-inline"><a href="/2024/05/03/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0-%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7/" class="page-link float-left">&larr;  下一页</a></li>
             
-            
-                <li class="next page-item d-inline"><a href="/2024/05/01/%E4%BB%80%E4%B9%88%E6%98%AF%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="page-link float-right">上一页  &rarr;</a></li>
+                <li class="next page-item d-inline"><a href="/2024/05/01/%E5%80%BC%E7%B1%BB%E5%9E%8B%E4%B8%8E%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/" class="page-link float-right">上一页  &rarr;</a></li>
             
         </ul>
     </div>
@@ -285,8 +250,8 @@
             repo: 'ChesTnuts233.github.io',
             owner: 'ChesTnuts233',
             admin: "ChesTnuts233",
-            id: '2024-05-01 22:12:18',
-            title: '值类型与引用类型',
+            id: '2024-05-03 23:19:01',
+            title: '算法笔记-有效的括号',
             distractionFreeMode: false  // Facebook-like distraction free mode
         });
         gitalk.render('gitalk-container');
