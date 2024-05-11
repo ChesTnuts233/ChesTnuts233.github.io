@@ -9,15 +9,14 @@
 
 
 
-    <meta name="description" content="逆波兰表达式求值
-前言 : 逆波兰表达式又称后缀表达式，还记得一年前笔试的时候还做过这道题，现在已经会了，只后悔大一的时候没有认真刷算法。
+    <meta name="description" content="前K个高频元素
+前言 ： 对于学历不高的我来说，突然发现原来找工作相当艰难啊
 
 题目
-给你一个字符串数组 tokens ，表示一个根据 逆波兰表示法 表示的算术表达式。
-请你计算该表达式。返回一个表示表达式值的整数。
-注意：
-
-有效的算符"/>
+给你一个整数数组 nums 和一个整数 k ，请你返回其中出现频率前 k 高的元素。你可以按 任意顺序 返回答案。
+示例 1:
+12输入: nums = [1,1,1,2,2,3], k = 2输出: [1,2]
+"/>
 
 
 <!--Author-->
@@ -27,20 +26,19 @@
 
 <!--Open Graph Title-->
 
-    <meta property="og:title" content="算法笔记-逆波兰表达式求值"/>
+    <meta property="og:title" content="算法笔记-前k个高频元素"/>
 
 
 <!--Open Graph Description-->
 
-    <meta property="og:description" content="逆波兰表达式求值
-前言 : 逆波兰表达式又称后缀表达式，还记得一年前笔试的时候还做过这道题，现在已经会了，只后悔大一的时候没有认真刷算法。
+    <meta property="og:description" content="前K个高频元素
+前言 ： 对于学历不高的我来说，突然发现原来找工作相当艰难啊
 
 题目
-给你一个字符串数组 tokens ，表示一个根据 逆波兰表示法 表示的算术表达式。
-请你计算该表达式。返回一个表示表达式值的整数。
-注意：
-
-有效的算符"/>
+给你一个整数数组 nums 和一个整数 k ，请你返回其中出现频率前 k 高的元素。你可以按 任意顺序 返回答案。
+示例 1:
+12输入: nums = [1,1,1,2,2,3], k = 2输出: [1,2]
+"/>
 
 
 <!--Open Graph Site Name-->
@@ -67,7 +65,7 @@
 
 <!-- Title -->
 
-<title>算法笔记-逆波兰表达式求值 | 你好 这里是Koo</title>
+<title>算法笔记-前k个高频元素 | 你好 这里是Koo</title>
 
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
@@ -136,7 +134,7 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 text-center">
                 <div class="post-heading text-white">
-                    <h1>算法笔记-逆波兰表达式求值</h1>
+                    <h1>算法笔记-前k个高频元素</h1>
                     
                 </div>
             </div>
@@ -158,7 +156,7 @@
     
         <span class="post-meta-split">&nbsp;|&nbsp;</span>
         <i class="far fa-calendar-check fa-fw"></i>
-        2024-05-05
+        2024-05-11
     
     <!-- word count and read count -->
     
@@ -172,54 +170,31 @@
     
 </span>  
                 
-                <h1 id="逆波兰表达式求值"><a href="#逆波兰表达式求值" class="headerlink" title="逆波兰表达式求值"></a>逆波兰表达式求值</h1><blockquote>
-<p>前言 : 逆波兰表达式又称后缀表达式，还记得一年前笔试的时候还做过这道题，现在已经会了，只后悔大一的时候没有认真刷算法。</p>
+                <h1 id="前K个高频元素"><a href="#前K个高频元素" class="headerlink" title="前K个高频元素"></a>前K个高频元素</h1><blockquote>
+<p>前言 ： 对于学历不高的我来说，突然发现原来找工作相当艰难啊</p>
 </blockquote>
 <h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><blockquote>
-<p>给你一个字符串数组 <code>tokens</code> ，表示一个根据 <a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%80%86%E6%B3%A2%E5%85%B0%E5%BC%8F/128437">逆波兰表示法</a> 表示的算术表达式。</p>
-<p>请你计算该表达式。返回一个表示表达式值的整数。</p>
-<p><strong>注意：</strong></p>
-<ul>
-<li>有效的算符为 <code>&#39;+&#39;</code>、<code>&#39;-&#39;</code>、<code>&#39;*&#39;</code> 和 <code>&#39;/&#39;</code> 。</li>
-<li>每个操作数（运算对象）都可以是一个整数或者另一个表达式。</li>
-<li>两个整数之间的除法总是 <strong>向零截断</strong> 。</li>
-<li>表达式中不含除零运算。</li>
-<li>输入是一个根据逆波兰表示法表示的算术表达式。</li>
-<li>答案及所有中间计算结果可以用 <strong>32 位</strong> 整数表示。</li>
-</ul>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：tokens = [&quot;2&quot;,&quot;1&quot;,&quot;+&quot;,&quot;3&quot;,&quot;*&quot;]</span><br><span class="line">输出：9</span><br><span class="line">解释：该算式转化为常见的中缀算术表达式为：((2 + 1) * 3) = 9</span><br></pre></td></tr></table></figure>
+<p>给你一个整数数组 <code>nums</code> 和一个整数 <code>k</code> ，请你返回其中出现频率前 <code>k</code> 高的元素。你可以按 <strong>任意顺序</strong> 返回答案。</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: nums = [1,1,1,2,2,3], k = 2</span><br><span class="line">输出: [1,2]</span><br></pre></td></tr></table></figure>
 
-<p><strong>示例 2：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：tokens = [&quot;4&quot;,&quot;13&quot;,&quot;5&quot;,&quot;/&quot;,&quot;+&quot;]</span><br><span class="line">输出：6</span><br><span class="line">解释：该算式转化为常见的中缀算术表达式为：(4 + (13 / 5)) = 6</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 3：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">输入：tokens = [&quot;10&quot;,&quot;6&quot;,&quot;9&quot;,&quot;3&quot;,&quot;+&quot;,&quot;-11&quot;,&quot;*&quot;,&quot;/&quot;,&quot;*&quot;,&quot;17&quot;,&quot;+&quot;,&quot;5&quot;,&quot;+&quot;]</span><br><span class="line">输出：22</span><br><span class="line">解释：该算式转化为常见的中缀算术表达式为：</span><br><span class="line">  ((10 * (6 / ((9 + 3) * -11))) + 17) + 5</span><br><span class="line">= ((10 * (6 / (12 * -11))) + 17) + 5</span><br><span class="line">= ((10 * (6 / -132)) + 17) + 5</span><br><span class="line">= ((10 * 0) + 17) + 5</span><br><span class="line">= (0 + 17) + 5</span><br><span class="line">= 17 + 5</span><br><span class="line">= 22</span><br></pre></td></tr></table></figure>
+<p><strong>示例 2:</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: nums = [1], k = 1</span><br><span class="line">输出: [1]</span><br></pre></td></tr></table></figure>
 
 <p><strong>提示：</strong></p>
 <ul>
-<li><code>1 &lt;= tokens.length &lt;= 104</code></li>
-<li><code>tokens[i]</code> 是一个算符（<code>&quot;+&quot;</code>、<code>&quot;-&quot;</code>、<code>&quot;*&quot;</code> 或 <code>&quot;/&quot;</code>），或是在范围 <code>[-200, 200]</code> 内的一个整数</li>
+<li><code>1 &lt;= nums.length &lt;= 105</code></li>
+<li><code>k</code> 的取值范围是 <code>[1, 数组中不相同的元素的个数]</code></li>
+<li>题目数据保证答案唯一，换句话说，数组中前 <code>k</code> 个高频元素的集合是唯一的</li>
 </ul>
-<p><strong>逆波兰表达式：</strong></p>
-<p>逆波兰表达式是一种后缀表达式，所谓后缀就是指算符写在后面。</p>
-<ul>
-<li>平常使用的算式则是一种中缀表达式，如 <code>( 1 + 2 ) * ( 3 + 4 )</code> 。</li>
-<li>该算式的逆波兰表达式写法为 <code>( ( 1 2 + ) ( 3 4 + ) * )</code> 。</li>
-</ul>
-<p>逆波兰表达式主要有以下两个优点：</p>
-<ul>
-<li>去掉括号后表达式无歧义，上式即便写成 <code>1 2 + 3 4 + * </code>也可以依据次序计算出正确结果。</li>
-<li>适合用栈操作运算：遇到数字则入栈；遇到算符则取出栈顶两个数字进行计算，并将结果压入栈中</li>
-</ul>
+<p><strong>进阶：</strong>你所设计算法的时间复杂度 <strong>必须</strong> 优于 <code>O(n log n)</code> ，其中 <code>n</code> 是数组大小。</p>
 </blockquote>
-<p>这里我犯的错就是 我的写法是 </p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">calStack.Push(calStack.Pop() + calStack.Pop());</span><br></pre></td></tr></table></figure>
+<p>这题需要用到优先级队列 涉及根堆思想 所以先放题解 后续学习到的时候 再详细解析</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">int</span>[] <span class="title">TopKFrequent</span>(<span class="params"><span class="built_in">int</span>[] nums, <span class="built_in">int</span> k</span>)</span> &#123;</span><br><span class="line">        Dictionary&lt;<span class="built_in">int</span>,<span class="built_in">int</span>&gt; kDic = <span class="keyword">new</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;nums.Length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(kDic.TryAdd(nums[i],<span class="number">1</span>))&#123;</span><br><span class="line">                <span class="comment">//成功加入</span></span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                kDic[nums[i]]++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//优先队列-从小到大排列</span></span><br><span class="line">        PriorityQueue&lt;<span class="built_in">int</span>,<span class="built_in">int</span>&gt; pq = <span class="keyword">new</span>();</span><br><span class="line">        <span class="keyword">foreach</span>(<span class="keyword">var</span> num <span class="keyword">in</span> kDic)&#123;</span><br><span class="line">            pq.Enqueue(num.Key, num.Value);</span><br><span class="line">            <span class="keyword">if</span>(pq.Count &gt; k)&#123;</span><br><span class="line">                pq.Dequeue();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//数组倒装</span></span><br><span class="line">        <span class="built_in">int</span>[] res = <span class="keyword">new</span> <span class="built_in">int</span>[k];</span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> i = k - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">            res[i] = pq.Dequeue();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
-<p>这里就弄反了弹出栈的循序  除法的时候就弄反了除数和被除数</p>
-<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="built_in">int</span> <span class="title">EvalRPN</span>(<span class="params"><span class="built_in">string</span>[] tokens</span>)</span> &#123;</span><br><span class="line">        Stack&lt;<span class="built_in">int</span>&gt; calStack = <span class="keyword">new</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;tokens.Length;i++)&#123;</span><br><span class="line">            <span class="comment">//如果是数字 入栈</span></span><br><span class="line">            <span class="comment">//判断是否为表达式</span></span><br><span class="line">            <span class="keyword">if</span>(tokens[i]==<span class="string">&quot;+&quot;</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="comment">//取出栈顶的两个元素</span></span><br><span class="line">                <span class="built_in">int</span> num2 = calStack.Pop();</span><br><span class="line">                <span class="built_in">int</span> num1 = calStack.Pop();</span><br><span class="line">                calStack.Push(num1 + num2);</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(tokens[i]==<span class="string">&quot;-&quot;</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">int</span> num2 = calStack.Pop();</span><br><span class="line">                <span class="built_in">int</span> num1 = calStack.Pop();</span><br><span class="line">                calStack.Push(num1 - num2);</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(tokens[i]==<span class="string">&quot;*&quot;</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">int</span> num2 = calStack.Pop();</span><br><span class="line">                <span class="built_in">int</span> num1 = calStack.Pop();</span><br><span class="line">                calStack.Push(num1 * num2);</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(tokens[i]==<span class="string">&quot;/&quot;</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">int</span> num2 = calStack.Pop();</span><br><span class="line">                <span class="built_in">int</span> num1 = calStack.Pop();</span><br><span class="line">                calStack.Push(num1 / num2);</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                calStack.Push(<span class="built_in">int</span>.Parse(tokens[i]));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> calStack.Pop(); </span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
 
             </div>
@@ -241,10 +216,8 @@
     <div class="col-lg-8 offset-lg-2 col-md-10 offset-md-1">
         <ul class="pagination d-block text-center">
             
-                <li class="previous page-item d-inline"><a href="/2024/05/11/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0-%E5%89%8Dk%E4%B8%AA%E9%AB%98%E9%A2%91%E5%85%83%E7%B4%A0/" class="page-link float-left">&larr;  下一页</a></li>
             
-            
-                <li class="next page-item d-inline"><a href="/2024/05/05/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0-%E5%88%A0%E9%99%A4%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E6%89%80%E6%9C%89%E7%9B%B8%E9%82%BB%E9%87%8D%E5%A4%8D%E9%A1%B9/" class="page-link float-right">上一页  &rarr;</a></li>
+                <li class="next page-item d-inline"><a href="/2024/05/05/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0-%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%B1%82%E5%80%BC/" class="page-link float-right">上一页  &rarr;</a></li>
             
         </ul>
     </div>
@@ -268,8 +241,8 @@
             repo: 'ChesTnuts233.github.io',
             owner: 'ChesTnuts233',
             admin: "ChesTnuts233",
-            id: '2024-05-05 23:33:46',
-            title: '算法笔记-逆波兰表达式求值',
+            id: '2024-05-11 11:25:50',
+            title: '算法笔记-前k个高频元素',
             distractionFreeMode: false  // Facebook-like distraction free mode
         });
         gitalk.render('gitalk-container');
