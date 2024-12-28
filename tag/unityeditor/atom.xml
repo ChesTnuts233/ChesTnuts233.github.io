@@ -5,8 +5,9 @@
     <link href="http://example.com" />
     <updated>2024-04-04T19:42:05.000Z</updated>
     <category term="UnityEditor" />
-    <category term="算法" />
+    <category term="资源管线" />
     <category term="Unity架构" />
+    <category term="算法" />
     <entry>
         <id>http://example.com/2024/04/05/Unity%E8%8A%82%E7%82%B9%E7%BC%96%E8%BE%91%E5%99%A8%E5%88%B6%E4%BD%9C%E7%9A%84%E6%B5%81%E7%A8%8B%E8%AE%B0%E5%BD%95/</id>
         <title>Unity节点编辑器制作的流程记录</title>

@@ -5,8 +5,9 @@
     <link href="http://example.com" />
     <updated>2024-04-19T04:55:55.000Z</updated>
     <category term="UnityEditor" />
-    <category term="算法" />
+    <category term="资源管线" />
     <category term="Unity架构" />
+    <category term="算法" />
     <entry>
         <id>http://example.com/2024/04/19/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/</id>
         <title>算法笔记-反转字符串</title>

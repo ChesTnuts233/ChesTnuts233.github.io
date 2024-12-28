@@ -8,8 +8,9 @@
         <pubDate>Fri, 19 Apr 2024 12:55:55 +0800</pubDate>
         <lastBuildDate>Fri, 19 Apr 2024 12:55:55 +0800</lastBuildDate>
         <category>UnityEditor</category>
-        <category>算法</category>
+        <category>资源管线</category>
         <category>Unity架构</category>
+        <category>算法</category>
         <item>
             <guid isPermalink="true">http://example.com/2024/04/19/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/</guid>
             <title>算法笔记-反转字符串</title>
